@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E041C02C089009E4C95 /* AsyncButton.swift */; };
+		18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E051C02C089009E4C95 /* AsyncImageView.swift */; };
+		18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E061C02C089009E4C95 /* AutoTextView.swift */; };
+		18349E251C02C08A009E4C95 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E071C02C089009E4C95 /* BlurView.swift */; };
+		18349E261C02C08A009E4C95 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E081C02C089009E4C95 /* DesignableButton.swift */; };
+		18349E271C02C08A009E4C95 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E091C02C089009E4C95 /* DesignableImageView.swift */; };
+		18349E281C02C08A009E4C95 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E0A1C02C089009E4C95 /* DesignableLabel.swift */; };
+		18349E291C02C08A009E4C95 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E0B1C02C089009E4C95 /* DesignableTabBarController.swift */; };
+		18349E2A1C02C08A009E4C95 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E0C1C02C089009E4C95 /* DesignableTextField.swift */; };
+		18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E0D1C02C089009E4C95 /* DesignableTextView.swift */; };
+		18349E2C1C02C08A009E4C95 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E0E1C02C089009E4C95 /* DesignableView.swift */; };
+		18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E0F1C02C089009E4C95 /* ImageLoader.swift */; };
+		18349E2E1C02C08A009E4C95 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349E101C02C089009E4C95 /* Info.plist */; };
+		18349E2F1C02C08A009E4C95 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E111C02C089009E4C95 /* KeyboardLayoutConstraint.swift */; };
+		18349E301C02C08A009E4C95 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E121C02C089009E4C95 /* LoadingView.swift */; };
+		18349E311C02C08A009E4C95 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18349E131C02C089009E4C95 /* LoadingView.xib */; };
+		18349E321C02C08A009E4C95 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E141C02C089009E4C95 /* Misc.swift */; };
+		18349E331C02C08A009E4C95 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E151C02C089009E4C95 /* SoundPlayer.swift */; };
+		18349E341C02C08A009E4C95 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E171C02C089009E4C95 /* Spring.swift */; };
+		18349E351C02C08A009E4C95 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E181C02C089009E4C95 /* SpringAnimation.swift */; };
+		18349E361C02C08A009E4C95 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E191C02C089009E4C95 /* SpringButton.swift */; };
+		18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E1A1C02C089009E4C95 /* SpringImageView.swift */; };
+		18349E381C02C08A009E4C95 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E1B1C02C089009E4C95 /* SpringLabel.swift */; };
+		18349E391C02C08A009E4C95 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E1C1C02C089009E4C95 /* SpringTextField.swift */; };
+		18349E3A1C02C08A009E4C95 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E1D1C02C089009E4C95 /* SpringTextView.swift */; };
+		18349E3B1C02C08A009E4C95 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E1E1C02C089009E4C95 /* SpringView.swift */; };
+		18349E3C1C02C08A009E4C95 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E1F1C02C089009E4C95 /* TransitionManager.swift */; };
+		18349E3D1C02C08A009E4C95 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E201C02C089009E4C95 /* TransitionZoom.swift */; };
+		18349E3E1C02C08A009E4C95 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E211C02C089009E4C95 /* UnwindSegue.swift */; };
+		184ECFFC1BFEE0AF001B05B2 /* PlainWeiboCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ECFFB1BFEE0AF001B05B2 /* PlainWeiboCell.swift */; };
+		184ECFFE1BFEE0C7001B05B2 /* ImageWeiboCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ECFFD1BFEE0C7001B05B2 /* ImageWeiboCell.swift */; };
+		186224D01C02EACA0030D2D6 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */; };
 		189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */; };
 		189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */; };
 		189AC2151BFD728C00BF5ACE /* AuthenticationSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */; };
@@ -20,6 +52,7 @@
 		189AC2431BFDC16800BF5ACE /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */; };
 		189AC2451BFDC18B00BF5ACE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */; };
 		189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */; };
+		18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9D3A81BFF235C00FC714E /* Weibo.swift */; };
 		18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */; };
 		18F8B9EE1BFD5773003865E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9ED1BFD5773003865E0 /* ViewController.swift */; };
 		18F8B9F11BFD5773003865E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B9EF1BFD5773003865E0 /* Main.storyboard */; };
@@ -110,6 +143,39 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18349E041C02C089009E4C95 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		18349E051C02C089009E4C95 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		18349E061C02C089009E4C95 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		18349E071C02C089009E4C95 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		18349E081C02C089009E4C95 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		18349E091C02C089009E4C95 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		18349E0A1C02C089009E4C95 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		18349E0B1C02C089009E4C95 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		18349E0C1C02C089009E4C95 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		18349E0D1C02C089009E4C95 /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		18349E0E1C02C089009E4C95 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		18349E0F1C02C089009E4C95 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		18349E101C02C089009E4C95 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18349E111C02C089009E4C95 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		18349E121C02C089009E4C95 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		18349E131C02C089009E4C95 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		18349E141C02C089009E4C95 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		18349E151C02C089009E4C95 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		18349E161C02C089009E4C95 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		18349E171C02C089009E4C95 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		18349E181C02C089009E4C95 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		18349E191C02C089009E4C95 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		18349E1A1C02C089009E4C95 /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		18349E1B1C02C089009E4C95 /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		18349E1C1C02C089009E4C95 /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		18349E1D1C02C089009E4C95 /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		18349E1E1C02C089009E4C95 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		18349E1F1C02C089009E4C95 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		18349E201C02C089009E4C95 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		18349E211C02C089009E4C95 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		184ECFFB1BFEE0AF001B05B2 /* PlainWeiboCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainWeiboCell.swift; sourceTree = "<group>"; };
+		184ECFFD1BFEE0C7001B05B2 /* ImageWeiboCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWeiboCell.swift; sourceTree = "<group>"; };
+		186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSetter.swift; sourceTree = "<group>"; };
@@ -123,6 +189,7 @@
 		189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTableViewController.swift; sourceTree = "<group>"; };
+		18C9D3A81BFF235C00FC714E /* Weibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weibo.swift; sourceTree = "<group>"; };
 		18F8B9E81BFD5773003865E0 /* MWeco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWeco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8B9ED1BFD5773003865E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +222,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18349E031C02C089009E4C95 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				18349E041C02C089009E4C95 /* AsyncButton.swift */,
+				18349E051C02C089009E4C95 /* AsyncImageView.swift */,
+				18349E061C02C089009E4C95 /* AutoTextView.swift */,
+				18349E071C02C089009E4C95 /* BlurView.swift */,
+				18349E081C02C089009E4C95 /* DesignableButton.swift */,
+				18349E091C02C089009E4C95 /* DesignableImageView.swift */,
+				18349E0A1C02C089009E4C95 /* DesignableLabel.swift */,
+				18349E0B1C02C089009E4C95 /* DesignableTabBarController.swift */,
+				18349E0C1C02C089009E4C95 /* DesignableTextField.swift */,
+				18349E0D1C02C089009E4C95 /* DesignableTextView.swift */,
+				18349E0E1C02C089009E4C95 /* DesignableView.swift */,
+				18349E0F1C02C089009E4C95 /* ImageLoader.swift */,
+				18349E101C02C089009E4C95 /* Info.plist */,
+				18349E111C02C089009E4C95 /* KeyboardLayoutConstraint.swift */,
+				18349E121C02C089009E4C95 /* LoadingView.swift */,
+				18349E131C02C089009E4C95 /* LoadingView.xib */,
+				18349E141C02C089009E4C95 /* Misc.swift */,
+				18349E151C02C089009E4C95 /* SoundPlayer.swift */,
+				18349E161C02C089009E4C95 /* Spring.h */,
+				18349E171C02C089009E4C95 /* Spring.swift */,
+				18349E181C02C089009E4C95 /* SpringAnimation.swift */,
+				18349E191C02C089009E4C95 /* SpringButton.swift */,
+				18349E1A1C02C089009E4C95 /* SpringImageView.swift */,
+				18349E1B1C02C089009E4C95 /* SpringLabel.swift */,
+				18349E1C1C02C089009E4C95 /* SpringTextField.swift */,
+				18349E1D1C02C089009E4C95 /* SpringTextView.swift */,
+				18349E1E1C02C089009E4C95 /* SpringView.swift */,
+				18349E1F1C02C089009E4C95 /* TransitionManager.swift */,
+				18349E201C02C089009E4C95 /* TransitionZoom.swift */,
+				18349E211C02C089009E4C95 /* UnwindSegue.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		184ECFF41BFEE087001B05B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				184ECFFB1BFEE0AF001B05B2 /* PlainWeiboCell.swift */,
+				184ECFFD1BFEE0C7001B05B2 /* ImageWeiboCell.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		189AC2181BFD981D00BF5ACE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +285,7 @@
 		189AC22F1BFD983200BF5ACE /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				18349E031C02C089009E4C95 /* Spring */,
 				189AC2351BFD9B2700BF5ACE /* SwiftyJSON.swift */,
 				189AC2171BFD981D00BF5ACE /* Alamofire.xcodeproj */,
 			);
@@ -185,6 +299,7 @@
 				189AC2371BFDA2A800BF5ACE /* NetWork.swift */,
 				189AC23E1BFDB7F200BF5ACE /* MZNotificationCenter.swift */,
 				189AC23A1BFDA48300BF5ACE /* SaveData.swift */,
+				18C9D3A81BFF235C00FC714E /* Weibo.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -215,10 +330,12 @@
 				189AC2161BFD737500BF5ACE /* MyPlayground.playground */,
 				189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */,
 				18F8B9ED1BFD5773003865E0 /* ViewController.swift */,
+				184ECFF41BFEE087001B05B2 /* Components */,
 				189AC2401BFDC14300BF5ACE /* TopWeiboTableViewController.swift */,
 				189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */,
 				189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */,
 				189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */,
+				186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */,
 				189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */,
 				18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */,
 				18F8B9EF1BFD5773003865E0 /* Main.storyboard */,
@@ -390,9 +507,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18349E2E1C02C08A009E4C95 /* Info.plist in Resources */,
 				18F8B9F91BFD5773003865E0 /* LaunchScreen.storyboard in Resources */,
 				18F8B9F61BFD5773003865E0 /* Assets.xcassets in Resources */,
 				18F8B9F11BFD5773003865E0 /* Main.storyboard in Resources */,
+				18349E311C02C08A009E4C95 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,19 +530,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F8B9F41BFD5773003865E0 /* MWeco.xcdatamodeld in Sources */,
+				18349E381C02C08A009E4C95 /* SpringLabel.swift in Sources */,
+				18349E3A1C02C08A009E4C95 /* SpringTextView.swift in Sources */,
+				18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */,
 				189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */,
+				18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */,
+				18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */,
+				18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */,
+				18349E2C1C02C08A009E4C95 /* DesignableView.swift in Sources */,
 				189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */,
 				189AC2381BFDA2A800BF5ACE /* NetWork.swift in Sources */,
+				18349E3D1C02C08A009E4C95 /* TransitionZoom.swift in Sources */,
 				18F8B9EE1BFD5773003865E0 /* ViewController.swift in Sources */,
 				189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */,
 				189AC23B1BFDA48300BF5ACE /* SaveData.swift in Sources */,
+				18349E251C02C08A009E4C95 /* BlurView.swift in Sources */,
+				18349E341C02C08A009E4C95 /* Spring.swift in Sources */,
 				189AC2431BFDC16800BF5ACE /* NotificationTableViewController.swift in Sources */,
+				18349E3E1C02C08A009E4C95 /* UnwindSegue.swift in Sources */,
+				18349E331C02C08A009E4C95 /* SoundPlayer.swift in Sources */,
+				184ECFFE1BFEE0C7001B05B2 /* ImageWeiboCell.swift in Sources */,
 				189AC2151BFD728C00BF5ACE /* AuthenticationSetter.swift in Sources */,
 				189AC2451BFDC18B00BF5ACE /* SearchViewController.swift in Sources */,
+				184ECFFC1BFEE0AF001B05B2 /* PlainWeiboCell.swift in Sources */,
+				186224D01C02EACA0030D2D6 /* SettingTableViewController.swift in Sources */,
+				18349E321C02C08A009E4C95 /* Misc.swift in Sources */,
 				189AC2361BFD9B2700BF5ACE /* SwiftyJSON.swift in Sources */,
+				18349E261C02C08A009E4C95 /* DesignableButton.swift in Sources */,
+				18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */,
+				18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */,
+				18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */,
 				189AC2411BFDC14300BF5ACE /* TopWeiboTableViewController.swift in Sources */,
+				18349E2F1C02C08A009E4C95 /* KeyboardLayoutConstraint.swift in Sources */,
+				18349E3C1C02C08A009E4C95 /* TransitionManager.swift in Sources */,
+				18349E271C02C08A009E4C95 /* DesignableImageView.swift in Sources */,
+				18349E291C02C08A009E4C95 /* DesignableTabBarController.swift in Sources */,
 				189AC23F1BFDB7F200BF5ACE /* MZNotificationCenter.swift in Sources */,
+				18349E3B1C02C08A009E4C95 /* SpringView.swift in Sources */,
+				18349E281C02C08A009E4C95 /* DesignableLabel.swift in Sources */,
 				18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */,
+				18349E361C02C08A009E4C95 /* SpringButton.swift in Sources */,
+				18349E351C02C08A009E4C95 /* SpringAnimation.swift in Sources */,
+				18349E391C02C08A009E4C95 /* SpringTextField.swift in Sources */,
+				18349E301C02C08A009E4C95 /* LoadingView.swift in Sources */,
+				18349E2A1C02C08A009E4C95 /* DesignableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

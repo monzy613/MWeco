@@ -9,32 +9,70 @@
 import UIKit
 
 class TopWeiboTableViewController: UITableViewController {
+    
+    private var publicStatuses = [Status]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initTableViewSettings()
+        loadStatus()
+        
+        
+        self.refreshControl?.addTarget(self, action: "loadStatus", forControlEvents: .ValueChanged)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loadStatus() {
+        NetWork.getFriendTimeline({
+            [unowned self]
+            status in
+            print("onSuccess \(status.count) new weibo")
+            self.publicStatuses = status
+            self.tableView.reloadData()
+            if self.refreshControl?.refreshing == true {
+                self.refreshControl?.endRefreshing()
+            }
+            }, onFailure: {
+                [unowned self] in
+                self.performSegueWithIdentifier("LoginSegue", sender: self)
+            })
     }
+
+    private func initTableViewSettings() {
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView()
+    }
+    
+    
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return publicStatuses.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCellWithIdentifier("PlainWeiboCell") as! PlainWeiboCell
+        cell.configure(publicStatuses[indexPath.row])
+        return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     /*

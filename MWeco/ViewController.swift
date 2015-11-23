@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     // Mark actions
     @IBAction func loginActionPressed(sender: UIButton) {
-        NetWork.revokeOauth()
+        
     }
 
     override func viewDidLoad() {

@@ -14,17 +14,25 @@ enum DataKeys: String {
     case UID = "UID"
 }
 
-class SaveData: NSObject {
+class SaveData {
     private static let userDefaults = NSUserDefaults.standardUserDefaults()
     
     // Mark setter
     class func set(value value: AnyObject, withKey key: DataKeys) {
-        SaveData.userDefaults.setValue(value, forKey: key.rawValue)
+        userDefaults.setValue(value, forKey: key.rawValue)
     }
     
     // Mark getter
     class func get(withKey key: DataKeys) -> AnyObject? {
         return userDefaults.objectForKey(key.rawValue)
+    }
+    
+    // Mark revokeOauth
+    class func remove(withKey key: DataKeys) {
+        if userDefaults.objectForKey(key.rawValue) != nil {
+            userDefaults.removeObjectForKey(key.rawValue)
+            print("\(key.rawValue) removed")
+        }
     }
     
 }

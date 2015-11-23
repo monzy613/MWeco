@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class NetWork: NSObject {
+class NetWork {
     
     // Mark getAccess_Token
     class func getAccess_Token(code: String) {
@@ -31,7 +31,7 @@ class NetWork: NSObject {
         }
     }
     
-    class func revokeOauth() {
+    class func revokeOauth(onSuccess: Void -> Void) {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
             return
         }
@@ -41,8 +41,11 @@ class NetWork: NSObject {
             for (key, value) in json {
                 print("\(key): \(value.stringValue)")
                 switch key {
+                case "error":
+                    return
                 case "result":
                     print("revokeOauth result: \(value.boolValue)")
+                    onSuccess()
                 default:
                     break
                 }
@@ -67,6 +70,54 @@ class NetWork: NSObject {
                     break
                 }
             }
+        }
+    }
+    
+    
+    // Mark getStatuses
+    class func getPublicTimeline(onSuccess: [Status] -> Void, onFailure: Void -> Void) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
+            onFailure()
+            return
+        }
+        
+        Alamofire.request(.GET, BaseURL.kPublicTimeLine, parameters: ["access_token": access_Token, "count": 50, "page": 1]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            let statuses = json["statuses"]
+            var publicStatuses = [Status]()
+            for tmp in statuses {
+                let statusJSON = tmp.1
+                let status = Status(withJSON: statusJSON)
+                publicStatuses.append(status)
+            }
+            onSuccess(publicStatuses)
+        }
+    }
+    
+    // Mark getFriendtimeline
+    class func getFriendTimeline(onSuccess: [Status] -> Void, onFailure: Void -> Void) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
+            onFailure()
+            return
+        }
+        
+        Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": 50, "page": 1]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            if let error = response.result.error {
+                print("error: \(error)")
+            } else {
+                print("no error")
+            }
+            let statuses = json["statuses"]
+            var publicStatuses = [Status]()
+            for tmp in statuses {
+                let statusJSON = tmp.1
+                let status = Status(withJSON: statusJSON)
+                publicStatuses.append(status)
+            }
+            onSuccess(publicStatuses)
         }
     }
 }

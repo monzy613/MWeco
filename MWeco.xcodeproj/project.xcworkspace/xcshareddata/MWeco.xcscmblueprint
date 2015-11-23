@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1BFFB90DC40F590C8C05460AE7C6E00EEF0BC82E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1BFFB90DC40F590C8C05460AE7C6E00EEF0BC82E" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0E88A9E2-5E6B-4549-BF57-E9017B6A17F8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1BFFB90DC40F590C8C05460AE7C6E00EEF0BC82E" : "MWeco\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "..\/..\/Downloads\/IOS_FRAMEWORKS\/Alamofire"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MWeco",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MWeco.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/monzy613\/MWeco.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1BFFB90DC40F590C8C05460AE7C6E00EEF0BC82E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    }
+  ]
+}

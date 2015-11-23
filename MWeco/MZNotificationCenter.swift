@@ -13,7 +13,7 @@ struct NotificationNames {
     static let AccessTokenGot = "AccessTokenGot"
 }
 
-class MZNotificationCenter: NSObject {
+class MZNotificationCenter {
     static var instance: MZNotificationCenter?
     class func getInstance() -> MZNotificationCenter {
         if instance == nil {
@@ -24,8 +24,7 @@ class MZNotificationCenter: NSObject {
     
     var expireTime: Int?
     
-    private override init() {
-        super.init()
+    private init() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setExpireTime:", name: NotificationNames.ExpireTimeGot, object: nil)
     }
     

@@ -19,8 +19,12 @@ struct BaseURL {
     static let kOauthURL = "https://api.weibo.com/oauth2/authorize?client_id=\(BaseURL.kAppKey)&redirect_uri=\(BaseURL.kRedirectURL)&display=mobile&response_type=code"
     static let kRevokeOauthURL = "https://api.weibo.com/oauth2/revokeoauth2"
     static let kGetOauthInfo = "https://api.weibo.com/oauth2/get_token_info"
-    
     static let kGetAccessToken = "https://api.weibo.com/oauth2/access_token"
+    
+    
+    static let kPublicTimeLine = "https://api.weibo.com/2/statuses/public_timeline.json"
+    static let kFriendTimeLine = "https://api.weibo.com/2/statuses/friends_timeline.json"
+    
     static let kBaseURL = "https://api.weibo.com/2/"
     static let kStatusesPath = "statuses/friends_timeline.json"
     static let kFriendships = "friendships/friends.json"

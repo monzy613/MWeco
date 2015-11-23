@@ -15,3 +15,4 @@ for query in queries ?? [] {
 }
 
 queryDic
+"<a xxx>iPhone 6</a>".componentsSeparatedByString(">")[1].componentsSeparatedByString("<")[0]

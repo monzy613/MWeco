@@ -9,10 +9,10 @@
 import UIKit
 
 class SettingTableViewController: UITableViewController {
-
+    private var loadingView: MZLoadingView?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadingView = MZLoadingView(rootView: (self.navigationController?.view)!, effect: UIBlurEffect(style: .Dark))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,7 +23,10 @@ class SettingTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 4 && indexPath.row == 0 {
+            loadingView?.start()
             NetWork.revokeOauth {
+                [unowned self] in
+                self.loadingView?.stop()
                 SaveData.remove(withKey: .ACCESS_TOKEN)
             }
             print("revokeOauth")

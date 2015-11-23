@@ -105,10 +105,16 @@ class NetWork {
         Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": 50, "page": 1]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
+            
             if let error = response.result.error {
                 print("error: \(error)")
             } else {
-                print("no error")
+                if json["error"].string != nil {
+                    print("error: \(json)")
+                    onFailure()
+                } else {
+                    //print(json)
+                }
             }
             let statuses = json["statuses"]
             var publicStatuses = [Status]()

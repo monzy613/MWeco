@@ -69,12 +69,14 @@ class Status {
     }
     
     init(withJSON json: JSON) {
+        
+        
         self.created_at = json["created_at"].string ?? "nil"
         self.id = json["id"].int64 ?? 0
         self.mid = json["mid"].int64 ?? 0
         self.idstr = "\(id)"
         self.text = json["text"].string ?? "nil"
-        self.source = json["source"].string ?? "nil"
+        self.source = json["source"].string ?? "<a>nil</a>"
         self.liked = json["liked"].bool ?? false
         self.truncated = json["truncated"].bool ?? false
         //json[PIC_URLS.Thumbnail.rawValue]
@@ -84,6 +86,12 @@ class Status {
         self.attitudes_count = json["attitudes_count"].int ?? 0
         self.comments_count = json["comments_count"].int ?? 0
         self.reposts_count = json["reposts_count"].int ?? 0
+        if json["retweeted_status"] == JSON.null {
+//            print("no retweeted_status")
+        } else {
+//            print("has retweeted_status")
+            self.retweeted_status = Status(withJSON: json["retweeted_status"])
+        }
     }
     
     var created_at: String?
@@ -94,6 +102,8 @@ class Status {
     var source: String?
     var liked: Bool?
     var truncated: Bool?
+    var retweeted_status: Status?
+    
     
     var attitudes_count: Int = 0
     var comments_count: Int = 0

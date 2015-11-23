@@ -11,10 +11,10 @@ import UIKit
 class TopWeiboTableViewController: UITableViewController {
     
     private var publicStatuses = [Status]()
-
+    private var loadingView: MZLoadingView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        initTableViewSettings()
+        initUI()
         loadStatus()
         
         
@@ -27,6 +27,14 @@ class TopWeiboTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    private func initUI() {
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView()
+        loadingView = MZLoadingView(rootView: (self.navigationController?.view)!, effect: UIBlurEffect(style: .Dark))
+        loadingView?.start()
+    }
+    
     func loadStatus() {
         NetWork.getFriendTimeline({
             [unowned self]
@@ -37,18 +45,15 @@ class TopWeiboTableViewController: UITableViewController {
             if self.refreshControl?.refreshing == true {
                 self.refreshControl?.endRefreshing()
             }
+            if self.loadingView?.isAnimating() == true {
+                self.loadingView?.stop()
+            }
             }, onFailure: {
                 [unowned self] in
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
             })
     }
 
-    private func initTableViewSettings() {
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.tableFooterView = UIView()
-    }
-    
     
 
     // MARK: - Table view data source
@@ -64,8 +69,8 @@ class TopWeiboTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlainWeiboCell") as! PlainWeiboCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier("PlainWeiboCell") as! PlainWeiboCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("RepostWeiboCell") as! PlainWeiboCell
         cell.configure(publicStatuses[indexPath.row])
         return cell
     }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CE4B51C06A33A00242094 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B41C06A33A00242094 /* Calculator.swift */; };
+		180CE4B91C06A35600242094 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B81C06A35600242094 /* Constants.swift */; };
+		180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4BA1C06A42300242094 /* StatusCell.swift */; };
 		18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E041C02C089009E4C95 /* AsyncButton.swift */; };
 		18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E051C02C089009E4C95 /* AsyncImageView.swift */; };
 		18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E061C02C089009E4C95 /* AutoTextView.swift */; };
@@ -41,6 +44,8 @@
 		186224D01C02EACA0030D2D6 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */; };
 		186224D81C0323D70030D2D6 /* MZLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186224D71C0323D70030D2D6 /* MZLoadingView.swift */; };
 		186224DA1C03262F0030D2D6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186224D91C03262F0030D2D6 /* TestViewController.swift */; };
+		187F2BBE1C06DCFF00BD96B4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F2BBD1C06DCFF00BD96B4 /* Extensions.swift */; };
+		187F2BC61C06DF3100BD96B4 /* PreviewPictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F2BC51C06DF3100BD96B4 /* PreviewPictureController.swift */; };
 		189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */; };
 		189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */; };
 		189AC2151BFD728C00BF5ACE /* AuthenticationSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */; };
@@ -54,6 +59,7 @@
 		189AC2431BFDC16800BF5ACE /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */; };
 		189AC2451BFDC18B00BF5ACE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */; };
 		189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */; };
+		18B9D25F1C04509E0084223D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D25E1C04509E0084223D /* ImageCell.swift */; };
 		18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9D3A81BFF235C00FC714E /* Weibo.swift */; };
 		18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */; };
 		18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */; };
@@ -146,6 +152,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		180CE4B41C06A33A00242094 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		180CE4B81C06A35600242094 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		180CE4BA1C06A42300242094 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		18349E041C02C089009E4C95 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		18349E051C02C089009E4C95 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		18349E061C02C089009E4C95 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -181,6 +190,8 @@
 		186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		186224D71C0323D70030D2D6 /* MZLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLoadingView.swift; sourceTree = "<group>"; };
 		186224D91C03262F0030D2D6 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		187F2BBD1C06DCFF00BD96B4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		187F2BC51C06DF3100BD96B4 /* PreviewPictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPictureController.swift; sourceTree = "<group>"; };
 		189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSetter.swift; sourceTree = "<group>"; };
@@ -194,6 +205,7 @@
 		189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTableViewController.swift; sourceTree = "<group>"; };
+		18B9D25E1C04509E0084223D /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		18C9D3A81BFF235C00FC714E /* Weibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weibo.swift; sourceTree = "<group>"; };
 		18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18F8B9E81BFD5773003865E0 /* MWeco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWeco.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +282,9 @@
 			children = (
 				184ECFFB1BFEE0AF001B05B2 /* PlainWeiboCell.swift */,
 				184ECFFD1BFEE0C7001B05B2 /* ImageWeiboCell.swift */,
+				18B9D25E1C04509E0084223D /* ImageCell.swift */,
+				180CE4BA1C06A42300242094 /* StatusCell.swift */,
+				187F2BBD1C06DCFF00BD96B4 /* Extensions.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -303,6 +318,8 @@
 		189AC2391BFDA44F00BF5ACE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				180CE4B81C06A35600242094 /* Constants.swift */,
+				180CE4B41C06A33A00242094 /* Calculator.swift */,
 				189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */,
 				189AC2371BFDA2A800BF5ACE /* NetWork.swift */,
 				189AC23E1BFDB7F200BF5ACE /* MZNotificationCenter.swift */,
@@ -345,6 +362,7 @@
 				189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */,
 				186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */,
 				189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */,
+				187F2BC51C06DF3100BD96B4 /* PreviewPictureController.swift */,
 				18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */,
 				18F8B9EF1BFD5773003865E0 /* Main.storyboard */,
 				186224D91C03262F0030D2D6 /* TestViewController.swift */,
@@ -557,6 +575,8 @@
 				189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */,
 				189AC23B1BFDA48300BF5ACE /* SaveData.swift in Sources */,
 				18349E251C02C08A009E4C95 /* BlurView.swift in Sources */,
+				180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */,
+				18B9D25F1C04509E0084223D /* ImageCell.swift in Sources */,
 				18349E341C02C08A009E4C95 /* Spring.swift in Sources */,
 				189AC2431BFDC16800BF5ACE /* NotificationTableViewController.swift in Sources */,
 				18349E3E1C02C08A009E4C95 /* UnwindSegue.swift in Sources */,
@@ -573,18 +593,22 @@
 				18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */,
 				18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */,
 				189AC2411BFDC14300BF5ACE /* TopWeiboTableViewController.swift in Sources */,
+				180CE4B91C06A35600242094 /* Constants.swift in Sources */,
 				18349E2F1C02C08A009E4C95 /* KeyboardLayoutConstraint.swift in Sources */,
 				18349E3C1C02C08A009E4C95 /* TransitionManager.swift in Sources */,
 				18349E271C02C08A009E4C95 /* DesignableImageView.swift in Sources */,
 				18349E291C02C08A009E4C95 /* DesignableTabBarController.swift in Sources */,
 				189AC23F1BFDB7F200BF5ACE /* MZNotificationCenter.swift in Sources */,
+				180CE4B51C06A33A00242094 /* Calculator.swift in Sources */,
 				18349E3B1C02C08A009E4C95 /* SpringView.swift in Sources */,
 				18349E281C02C08A009E4C95 /* DesignableLabel.swift in Sources */,
 				18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */,
 				18349E361C02C08A009E4C95 /* SpringButton.swift in Sources */,
 				18349E351C02C08A009E4C95 /* SpringAnimation.swift in Sources */,
+				187F2BC61C06DF3100BD96B4 /* PreviewPictureController.swift in Sources */,
 				18349E391C02C08A009E4C95 /* SpringTextField.swift in Sources */,
 				18349E301C02C08A009E4C95 /* LoadingView.swift in Sources */,
+				187F2BBE1C06DCFF00BD96B4 /* Extensions.swift in Sources */,
 				18349E2A1C02C08A009E4C95 /* DesignableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

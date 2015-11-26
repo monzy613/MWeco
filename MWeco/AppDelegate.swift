@@ -13,11 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var notificationCenter: MZNotificationCenter?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        MZNotificationCenter.getInstance()
+        notificationCenter = MZNotificationCenter.getInstance()
         return true
     }
 

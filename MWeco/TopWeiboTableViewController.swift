@@ -16,7 +16,7 @@ class TopWeiboTableViewController: UITableViewController {
         super.viewDidLoad()
         initUI()
         loadStatus()
-        
+        registerFor3DTouch()
         
         self.refreshControl?.addTarget(self, action: "loadStatus", forControlEvents: .ValueChanged)
         
@@ -54,7 +54,13 @@ class TopWeiboTableViewController: UITableViewController {
             })
     }
 
-    
+    func registerFor3DTouch() {
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: self.view)
+        } else {
+            print("force touch not available")
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -69,15 +75,17 @@ class TopWeiboTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("PlainWeiboCell") as! PlainWeiboCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("RepostWeiboCell") as! PlainWeiboCell
-        cell.configure(publicStatuses[indexPath.row])
+        let cell = StatusCell(withStatus: publicStatuses[indexPath.row], style: .Default, reuseIdentifier: "StatusCell")
         return cell
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return Calculator.statusCellHeight(withStatus: publicStatuses[indexPath.row], andScreenWidth: UIScreen.mainScreen().bounds.width)
     }
 
     /*

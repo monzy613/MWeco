@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageWeiboCell: UITableViewCell {
+class ImageWeiboCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var status: Status?
     
@@ -24,7 +24,7 @@ class ImageWeiboCell: UITableViewCell {
     }
     @IBOutlet var repostButton: SpringButton!
     @IBOutlet var commentButton: SpringButton!
-    @IBOutlet var imageRootView: UIView!
+    @IBOutlet var imageCollectionView: UICollectionView!
     
     // Mark actions
     @IBAction func upvoteButtonPressed(sender: SpringButton) {
@@ -56,10 +56,8 @@ class ImageWeiboCell: UITableViewCell {
     
     func configure() {
         contentLabel.text = "self.imageRootView.frame = CGRect(x: self.imageRootView.frame.origin.x, y: self.imageRootView.frame.origin.y, width: self.imageRootView.frame.width, height: 400) self.imageRootView.frame = CGRect(x: self.imageRootView.frame.origin.x, y: self.imageRootView.frame.origin.y, width: self.imageRootView.frame.width, height: 400)"
-        dispatch_async(dispatch_get_main_queue(), {
-            self.imageRootView.frame = CGRect(x: self.imageRootView.frame.origin.x, y: self.imageRootView.frame.origin.y, width: self.imageRootView.frame.width, height: 400)
-            self.contentView.updateConstraintsIfNeeded()
-        })
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
     }
     
     override func awakeFromNib() {
@@ -72,5 +70,22 @@ class ImageWeiboCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // Mark UICollectionViewDelegate methods
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("one item")
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = imageCollectionView.dequeueReusableCellWithReuseIdentifier("ImageCollectionViewCell", forIndexPath: indexPath) as! ImageCell
+        return cell
+    }
+    
 
 }

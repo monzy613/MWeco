@@ -16,3 +16,19 @@ for query in queries ?? [] {
 
 queryDic
 "<a xxx>iPhone 6</a>".componentsSeparatedByString(">")[1].componentsSeparatedByString("<")[0]
+
+let src = "http://ww3.sinaimg.cn/large/b285e14ajw1eychiprlgqj22bc0t51ky.jpg"
+
+
+func generatePicturePath(withType type: String, andSrc src: String) -> String {
+    var path = ""
+    var components = NSString(string: src).pathComponents
+    if components.count >= 4 {
+        path = "\(components[0])//\(components[1])/\(type)/\(components[3])"
+    }
+    return path
+}
+
+generatePicturePath(withType: "origin", andSrc: src)
+generatePicturePath(withType: "thumb", andSrc: src)
+generatePicturePath(withType: "bmiddle", andSrc: src)

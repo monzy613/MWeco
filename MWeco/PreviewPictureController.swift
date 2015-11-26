@@ -1,22 +1,23 @@
 //
-//  TestViewController.swift
+//  PreviewPictureController.swift
 //  MWeco
 //
-//  Created by Monzy on 15/11/23.
+//  Created by Monzy on 15/11/26.
 //  Copyright © 2015年 Monzy. All rights reserved.
 //
 
 import UIKit
 
-class TestViewController: UIViewController {
-    var loadingView: MZLoadingView?
+class PreviewPictureController: UIViewController {
+
+    var imageURL: NSURL?
+    
+    @IBOutlet var imageViewToPreview: AsyncImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //loadingView = MZLoadingView(rootView: view, effect: UIBlurEffect(style: .Light))
-        let testButton = UIButton(type: .Custom)
-
+        if let url = imageURL {
+            self.imageViewToPreview.url = url
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,17 +25,6 @@ class TestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    var isLoading = false
-    @IBAction func startAndStop(sender: UIButton) {
-        if isLoading == false {
-            loadingView!.start()
-            isLoading = true
-        } else {
-            loadingView!.stop()
-            isLoading = false
-        }
-    }
 
     /*
     // MARK: - Navigation

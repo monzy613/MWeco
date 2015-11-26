@@ -14,6 +14,35 @@ enum PIC_URLS: String {
     case Original = "original_pic"
 }
 
+class PictureURL {
+    var thumbnailURL: NSURL
+    var bmiddleURL: NSURL
+    var largeURL: NSURL
+    init(thumbnail: String, bmiddle: String, large: String) {
+        self.thumbnailURL = NSURL(string: thumbnail) ?? NSURL()
+        self.bmiddleURL = NSURL(string: bmiddle) ?? NSURL()
+        self.largeURL = NSURL(string: large) ?? NSURL()
+    }
+    
+    init(withThumbnail thumbnail: String) {
+        let bmiddle = PictureURL.generatePicturePath(withType: "bmiddle", andSrc: thumbnail)
+        let large = PictureURL.generatePicturePath(withType: "large", andSrc: thumbnail)
+        self.thumbnailURL = NSURL(string: thumbnail) ?? NSURL()
+        self.bmiddleURL = NSURL(string: bmiddle) ?? NSURL()
+        self.largeURL = NSURL(string: large) ?? NSURL()
+    }
+
+    class func generatePicturePath(withType type: String, andSrc src: String) -> String {
+        var path = ""
+        var components = NSString(string: src).pathComponents
+        if components.count >= 4 {
+            path = "\(components[0])//\(components[1])/\(type)/\(components[3])"
+        }
+        return path
+    }
+    
+}
+
 class Blogger {
     
     init() {
@@ -69,14 +98,12 @@ class Status {
     }
     
     init(withJSON json: JSON) {
-        
-        
         self.created_at = json["created_at"].string ?? "nil"
         self.id = json["id"].int64 ?? 0
         self.mid = json["mid"].int64 ?? 0
         self.idstr = "\(id)"
         self.text = json["text"].string ?? "nil"
-        self.source = json["source"].string ?? "<a>nil</a>"
+        self.rawSource = json["source"].string ?? "<a>nil</a>"
         self.liked = json["liked"].bool ?? false
         self.truncated = json["truncated"].bool ?? false
         //json[PIC_URLS.Thumbnail.rawValue]
@@ -87,10 +114,20 @@ class Status {
         self.comments_count = json["comments_count"].int ?? 0
         self.reposts_count = json["reposts_count"].int ?? 0
         if json["retweeted_status"] == JSON.null {
-//            print("no retweeted_status")
+            hasRetweet = false
         } else {
-//            print("has retweeted_status")
+            hasRetweet = true
             self.retweeted_status = Status(withJSON: json["retweeted_status"])
+        }
+        
+        let picJSONArr = json["pic_urls"].array ?? []
+        if picJSONArr.count > 0 {
+            hasPictures = true
+        }
+        for picJson in picJSONArr {
+            let picPath = picJson[PIC_URLS.Thumbnail.rawValue].string ?? "nilPath"
+            pic_urls.append(PictureURL(withThumbnail: picPath))
+            print("\(picPath)")
         }
     }
     
@@ -99,7 +136,26 @@ class Status {
     var mid: Int64?
     var idstr: String?
     var text: String?
-    var source: String?
+    var rawSource: String?
+    var source: String {
+        get {
+            guard let rawValue = rawSource else {
+                return "nil"
+            }
+//            print("rawSource: \(rawValue)")
+            let item1 = rawValue.componentsSeparatedByString(">")
+            if item1.count >= 2 {
+                let item2 = item1[1].componentsSeparatedByString("<")
+                if item2.count >= 1 {
+                    return item2[0]
+                } else {
+                    return "nil"
+                }
+            } else {
+                return "nil"
+            }
+        }
+    }
     var liked: Bool?
     var truncated: Bool?
     var retweeted_status: Status?
@@ -109,6 +165,10 @@ class Status {
     var comments_count: Int = 0
     var reposts_count: Int = 0
     
-    var pic_urls = [String: NSURL]()
+    var pic_urls = [PictureURL]()
     var blogger: Blogger?
+    
+    
+    var hasRetweet: Bool = false
+    var hasPictures: Bool = false
 }

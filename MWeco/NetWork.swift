@@ -102,7 +102,7 @@ class NetWork {
             return
         }
         
-        Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": 50, "page": 1]).responseJSON {
+        Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": 10, "page": 1]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
             

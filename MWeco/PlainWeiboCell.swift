@@ -71,22 +71,22 @@ class PlainWeiboCell: UITableViewCell {
         avatarImageView.setURL(url, placeholderImage: avatarImageView.image)
         // <a xxx>iPhone 6</a>
         
-        if let source = status.source {
-            let components1 = source.componentsSeparatedByString(">")
-            if components1.count >= 2 {
-                let components2 = components1[1].componentsSeparatedByString("<")
-                if components2.count >= 1 {
-                    sendFromLabel.text = components2[0]
-                } else {
-                    sendFromLabel.text = "新浪微博"
-                }
-            } else {
-                sendFromLabel.text = "新浪微博"
-            }
-        } else {
-            sendFromLabel.text = "新浪微博"
-        }
-        
+//        if let source = status.source {
+//            let components1 = source.componentsSeparatedByString(">")
+//            if components1.count >= 2 {
+//                let components2 = components1[1].componentsSeparatedByString("<")
+//                if components2.count >= 1 {
+//                    sendFromLabel.text = components2[0]
+//                } else {
+//                    sendFromLabel.text = "新浪微博"
+//                }
+//            } else {
+//                sendFromLabel.text = "新浪微博"
+//            }
+//        } else {
+//            sendFromLabel.text = "新浪微博"
+//        }
+//        
         upvoteButton.setTitle("\(status.attitudes_count)", forState: .Normal)
         commentButton.setTitle("\(status.comments_count)", forState: .Normal)
         repostButton.setTitle("\(status.reposts_count)", forState: .Normal)

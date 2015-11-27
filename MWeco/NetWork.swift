@@ -102,7 +102,7 @@ class NetWork {
             return
         }
         
-        Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": 10, "page": 1]).responseJSON {
+        Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": Constants.InitStatusesAmount, "page": 1]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
             
@@ -124,6 +124,21 @@ class NetWork {
                 publicStatuses.append(status)
             }
             onSuccess(publicStatuses)
+        }
+    }
+    
+    // Mark upload a text status
+    class func uploadTextStatus(text: String) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
+        Alamofire.request(.POST, BaseURL.kTextStatus, parameters: ["access_token": access_Token, "status": text, ]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                print("success: \n\(json)")
+            }
         }
     }
 }

@@ -10,13 +10,15 @@ import UIKit
 
 class TopWeiboTableViewController: UITableViewController {
     
-    private var publicStatuses = [Status]()
     private var loadingView: MZLoadingView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        initUI()
-        loadStatus()
+        currentTabIndex = 0
         registerFor3DTouch()
+        initUI()
+        if publicStatuses.count == 0 {
+            loadStatus()
+        }
         
         self.refreshControl?.addTarget(self, action: "loadStatus", forControlEvents: .ValueChanged)
         
@@ -31,16 +33,16 @@ class TopWeiboTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
-        loadingView = MZLoadingView(rootView: (self.navigationController?.view)!, effect: UIBlurEffect(style: .Dark))
-        loadingView?.start()
     }
     
     func loadStatus() {
+        loadingView = MZLoadingView(rootView: (self.navigationController?.view)!, effect: UIBlurEffect(style: .Dark))
+        loadingView?.start()
         NetWork.getFriendTimeline({
             [unowned self]
             status in
             print("onSuccess \(status.count) new weibo")
-            self.publicStatuses = status
+            publicStatuses = status
             self.tableView.reloadData()
             if self.refreshControl?.refreshing == true {
                 self.refreshControl?.endRefreshing()

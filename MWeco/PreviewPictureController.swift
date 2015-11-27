@@ -12,6 +12,17 @@ class PreviewPictureController: UIViewController {
 
     var imageURL: NSURL?
     
+    lazy var previewActions: [UIPreviewActionItem] = {
+        let downloadAction = UIPreviewAction(title: "下载", style: .Default) {
+            action, viewController in
+            
+        }
+        let attitudeAction = UIPreviewAction(title: "赞", style: .Default) {
+            action, viewControllre in
+        }
+        return [downloadAction, attitudeAction]
+    }()
+    
     @IBOutlet var imageViewToPreview: AsyncImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,21 +30,8 @@ class PreviewPictureController: UIViewController {
             self.imageViewToPreview.url = url
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func previewActionItems() -> [UIPreviewActionItem] {
+        return previewActions
     }
-    */
-
 }

@@ -28,7 +28,7 @@ struct BaseURL {
     static let kBaseURL = "https://api.weibo.com/2/"
     static let kStatusesPath = "statuses/friends_timeline.json"
     static let kFriendships = "friendships/friends.json"
-    static let kTextStatus = "statuses/update.json"
+    static let kTextStatus = "https://api.weibo.com/2/statuses/update.json"
     static let kImageStatus = "https://api.weibo.com/2/statuses/upload.json"
     static let kCommentCreate = "comments/create.json"
     static let kRepostStatus = "statuses/repost.json"

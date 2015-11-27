@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentTabIndex = 3
         // Do any additional setup after loading the view.
     }
 

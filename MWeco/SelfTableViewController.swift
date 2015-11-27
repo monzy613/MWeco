@@ -12,7 +12,7 @@ class SelfTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentTabIndex = 4
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

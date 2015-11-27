@@ -15,6 +15,19 @@ let FONT_RETWEETSCREENNAME = UIFont(name: "Avenir-Light", size: 18)
 let FONT_RETWEETTEXT = UIFont(name: "Avenir-Light", size: 15)
 
 
+class Constants {
+    static let InitStatusesAmount = 25
+    static let newStatusPlaceholder = "分享新鲜事..."
+}
+
+//Segues
+class Segues {
+    static let StatusMenu = "StatusMenuSegue"
+    static let NewStatus = "NewStatusSegue"
+    static let Return = "ReturnSegue"
+}
+
+
 //imagenames
 class ImageNames {
     static let attitude_unactive = "upvote-unactive"
@@ -25,6 +38,9 @@ class ImageNames {
     
     static let comment_unactive = "comment-unactive"
     static let comment_active = "comment-active"
+    
+    static let addButton = "addButton"
+    static let addIcon = "icon-add-no-circle"
 }
 
 class ImageType {

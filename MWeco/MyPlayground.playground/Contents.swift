@@ -32,3 +32,9 @@ func generatePicturePath(withType type: String, andSrc src: String) -> String {
 generatePicturePath(withType: "origin", andSrc: src)
 generatePicturePath(withType: "thumb", andSrc: src)
 generatePicturePath(withType: "bmiddle", andSrc: src)
+
+var button = UIButton(frame: CGRect(x: 0, y: 0, width: 75, height: 75))
+button.backgroundColor = UIColor.yellowColor()
+button.layer.cornerRadius = 37.5
+button.clipsToBounds = true
+button

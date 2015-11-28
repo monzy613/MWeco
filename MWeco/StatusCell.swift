@@ -268,7 +268,11 @@ class StatusCell: UITableViewCell {
         //attitudeButton
         attitudeButton = SpringButton()
         attitudeButton?.addTarget(self, action: "attitudeButtonPressed", forControlEvents: .TouchUpInside)
-        attitudeButton?.setImage(UIImage(named: ImageNames.attitude_unactive), forState: .Normal)
+        
+        attitudeButton?.setImage(UIImage(named:
+            (status.liked ?? false) == true ? ImageNames.attitude_active:ImageNames.attitude_unactive
+            ), forState: .Normal)
+        
         attitudeButton?.setTitle("\(status.attitudes_count)", forState: .Normal)
         attitudeButton?.setTitleColor(UIColor.darkTextColor(), forState: .Normal)
         attitudeButton?.titleLabel?.textAlignment = .Right
@@ -323,8 +327,12 @@ class StatusCell: UITableViewCell {
         status.liked = newState
         if newState == true {
             attitudeButton?.setImage(UIImage(named: ImageNames.attitude_active), forState: .Normal)
+            attitudeButton?.setTitle("\((Int((attitudeButton!.currentTitle ?? "0")) ?? 0) + 1)", forState: .Normal)
+            NetWork.attitude(status.idstr!)
         } else {
             attitudeButton?.setImage(UIImage(named: ImageNames.attitude_unactive), forState: .Normal)
+            attitudeButton?.setTitle("\((Int((attitudeButton!.currentTitle ?? "0")) ?? 0) - 1)", forState: .Normal)
+            NetWork.destroyAttitude(status.idstr!)
         }
     }
     

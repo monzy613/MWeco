@@ -336,11 +336,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xOi-eu-jPH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6jK-hN-wDY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="drr-et-nV3" customClass="AsyncImageView" customModule="MWeco" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -351,16 +351,16 @@
                             <constraint firstItem="drr-et-nV3" firstAttribute="width" secondItem="6jK-hN-wDY" secondAttribute="width" id="bMM-Xo-xKJ"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="imageViewToPreview" destination="drr-et-nV3" id="IdR-nS-7fj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1k-LW-S0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954.5" y="3385.5"/>
+            <point key="canvasLocation" x="1029" y="3213"/>
         </scene>
-        <!--Self Table View Controller-->
+        <!--我-->
         <scene sceneID="FaK-NU-e33">
             <objects>
                 <tableViewController id="IFB-Xg-YFL" customClass="SelfTableViewController" customModule="MWeco" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,7 +384,7 @@
                             <outlet property="delegate" destination="IFB-Xg-YFL" id="cqc-40-ixJ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="BBh-IF-JEE"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar-me-selected" id="BBh-IF-JEE"/>
                     <navigationItem key="navigationItem" id="Rt6-kQ-n0K">
                         <barButtonItem key="rightBarButtonItem" image="setting_24px" id="4fH-9X-hry">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -495,7 +495,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHv-K1-sbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="3026"/>
+            <point key="canvasLocation" x="1907" y="3139"/>
         </scene>
         <!--Oauth View Controller-->
         <scene sceneID="I0c-oV-bJo">
@@ -1038,11 +1038,11 @@
             </objects>
             <point key="canvasLocation" x="629" y="2538"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--首页-->
         <scene sceneID="NKp-cj-I4R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mR6-id-7o2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="zSG-1h-cWp"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar-home-selected" id="zSG-1h-cWp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="i1Q-q9-Tet">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1058,11 +1058,11 @@
             </objects>
             <point key="canvasLocation" x="266" y="1124"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--消息-->
         <scene sceneID="Cue-Ke-fTW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C9i-hh-2TX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="JWy-UB-N8N"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar-msg-selected" id="JWy-UB-N8N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uaz-66-1Om">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1135,7 +1135,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ZT-0F-X6O">
                                 <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1208,11 +1207,11 @@
             </objects>
             <point key="canvasLocation" x="497" y="3277"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--发现-->
         <scene sceneID="GRp-gC-aRa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PM7-MH-5iv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="JHM-hS-EB1"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar-search-selected" id="JHM-hS-EB1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLM-Uq-fFd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1265,11 +1264,15 @@
         <image name="repost-background" width="12" height="310"/>
         <image name="repost-unactive" width="20" height="21"/>
         <image name="setting_24px" width="24" height="24"/>
+        <image name="tabbar-home-selected" width="32" height="26"/>
+        <image name="tabbar-me-selected" width="26" height="26"/>
+        <image name="tabbar-msg-selected" width="28" height="26"/>
+        <image name="tabbar-search-selected" width="28" height="26"/>
         <image name="tickAndCross" width="300" height="300"/>
         <image name="upvote-unactive" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Aza-w7-WIp"/>
-        <segue reference="6RZ-sX-oKV"/>
+        <segue reference="XH6-ge-gpY"/>
     </inferredMetricsTieBreakers>
 </document>

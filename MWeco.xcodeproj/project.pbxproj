@@ -376,13 +376,13 @@
 				184ECFF41BFEE087001B05B2 /* Cell */,
 				18047EC11C08C43B006D1EFA /* Controllers */,
 				18F8B9EF1BFD5773003865E0 /* Main.storyboard */,
+				18F8B9F71BFD5773003865E0 /* LaunchScreen.storyboard */,
 				18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */,
 				186224D91C03262F0030D2D6 /* TestViewController.swift */,
 				18F8B9ED1BFD5773003865E0 /* ViewController.swift */,
 				189AC2161BFD737500BF5ACE /* MyPlayground.playground */,
 				18F8B9F51BFD5773003865E0 /* Assets.xcassets */,
 				18F8BA1E1BFD5AD5003865E0 /* Supporting Files */,
-				18F8B9F71BFD5773003865E0 /* LaunchScreen.storyboard */,
 				18F8B9F21BFD5773003865E0 /* MWeco.xcdatamodeld */,
 			);
 			path = MWeco;

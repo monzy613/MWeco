@@ -19,6 +19,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         initAddButton()
         self.delegate?.tabBarController!(self, shouldSelectViewController: viewControllers![currentTabIndex])
         selectedIndex = currentTabIndex
+        setTabSelected(withIndex: selectedIndex)
         print("CurrentTab: \(currentTabIndex)")
     }
 
@@ -53,4 +54,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         return true
     }
     
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        guard let index = self.tabBar.items?.indexOf(item) else {return}
+        print("itemIndex: \(index)")
+        setTabSelected(withIndex: index)
+    }
+    
+    func setTabSelected(withIndex index: Int) {
+        for (i, element) in (self.tabBar.items!).enumerate() {
+            if i != index {
+                element.image = Tabbar.tabbarImage(withIndex: i, andState: .UnSelected)
+            }
+        }
+    }
 }

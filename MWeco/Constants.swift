@@ -43,6 +43,40 @@ class ImageNames {
     static let addIcon = "icon-add-no-circle"
 }
 
+// tabbar item image names 
+class Tabbar {
+    static let unselected = [
+        "tabbar-home-unselected",
+        "tabbar-msg-unselected",
+        "middle",
+        "tabbar-search-unselected",
+        "tabbar-me-unselected",
+    ]
+    
+    static let selected = [
+        "tabbar-home-selected",
+        "tabbar-msg-selected",
+        "middle",
+        "tabbar-search-selected",
+        "tabbar-me-selected",
+    ]
+    
+    enum TabbarState {
+        case Selected
+        case UnSelected
+    }
+    
+    static func tabbarImage(withIndex index: Int, andState state: TabbarState) -> UIImage {
+        switch state {
+        case .Selected:
+            print(selected[index])
+            return UIImage(named: selected[index])!
+        case .UnSelected:
+            return UIImage(named: unselected[index])!
+        }
+    }
+}
+
 class ImageType {
     static let origin = "origin"
     static let large = "large"

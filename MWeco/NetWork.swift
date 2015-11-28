@@ -127,10 +127,43 @@ class NetWork {
         }
     }
     
+    // Mark getFollowers
+    class func getFollowers() {
+    }
+    
     // Mark upload a text status
     class func uploadTextStatus(text: String) {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
         Alamofire.request(.POST, BaseURL.kTextStatus, parameters: ["access_token": access_Token, "status": text, ]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                print("success: \n\(json)")
+            }
+        }
+    }
+    
+    // Mark attitude
+    class func attitude(statusId: String) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
+        Alamofire.request(.POST, BaseURL.attitude, parameters: ["access_token": access_Token, "attitude": "simle", "id": statusId]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                print("success: \n\(json)")
+            }
+        }
+    }
+    // Mark unattitude
+    class func destroyAttitude(statusId: String) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
+        Alamofire.request(.POST, BaseURL.destroyAttitude, parameters: ["access_token": access_Token, "attitude": "simle", "id": statusId]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
             

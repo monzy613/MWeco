@@ -38,22 +38,31 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     func loadStatus() {
         loadingView = MZLoadingView(rootView: (self.navigationController?.view)!, effect: UIBlurEffect(style: .Dark))
         loadingView?.start()
-        NetWork.getFriendTimeline({
-            [unowned self]
-            status in
-            print("onSuccess \(status.count) new weibo")
-            publicStatuses = status
-            self.tableView.reloadData()
-            if self.refreshControl?.refreshing == true {
-                self.refreshControl?.endRefreshing()
-            }
-            if self.loadingView?.isAnimating() == true {
-                self.loadingView?.stop()
-            }
+        NetWork.getTimeLine(.FriendTimeLine
+            , onSuccess: {
+                status in
+                print("onSuccess \(status.count) new weibo")
+                NetWork.getUserInfo({
+                    json in
+                    currentUserInfo = Blogger(withJSON: json)
+                    }, onFailure: {})
+                publicStatuses = status
+                self.tableView.reloadData()
+                if self.refreshControl?.refreshing == true {
+                    self.refreshControl?.endRefreshing()
+                }
+                if self.loadingView?.isAnimating() == true {
+                    self.loadingView?.stop()
+                }
+                NetWork.getTimeLine(.SelfTimeLine
+                    , onSuccess: {
+                        status in
+                        selfStatuses = status
+                    }, onFailure: {
+                })
             }, onFailure: {
-                [unowned self] in
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
-            })
+        })
     }
 
     func registerFor3DTouch() {

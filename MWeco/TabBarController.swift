@@ -24,8 +24,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
 
     func initAddButton() {
-        let height = tabBar.frame.height * 0.8
-        let width = height * 4 / 3
+        let height = tabBar.frame.height * 0.85
+        let width = height * 6 / 5
         let startX = tabBar.frame.midX - width / 2
         let startY = tabBar.frame.midY - height / 2
         
@@ -36,7 +36,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         addButton?.tintColor = UIColor.whiteColor()
         //addButton?.setBackgroundImage(UIImage(named: ImageNames.addButton), forState: .Normal)
         addButton?.frame = CGRect(x: startX, y: startY, width: width, height: height)
-        addButton?.layer.cornerRadius = width / 10
+        addButton?.layer.cornerRadius = width / 15
         addButton?.clipsToBounds = true
         addButton?.addTarget(self, action: "addButtonPressed", forControlEvents: .TouchUpInside)
         self.view.addSubview(addButton!)

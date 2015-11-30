@@ -49,12 +49,19 @@ class Blogger {
     }
     
     init(withJSON json: JSON) {
-        self.id = json["id"].string ?? "nil"
-        self.name = json["name"].string ?? "nil"
-        self.screen_name = json["screen_name"].string ?? self.name
-        self.avatarImageURL = NSURL(string: json["profile_image_url"].stringValue)
-        self.avatar_largeURL = NSURL(string: json["avatar_large"].string ?? (self.avatarImageURL?.path!)!)
-        self.avatar_HDURL = NSURL(string: json["avatar_hd"].string ?? (self.avatarImageURL?.path!)!)
+        id = json["id"].string ?? "nil"
+        name = json["name"].string ?? "nil"
+        screen_name = json["screen_name"].string ?? self.name
+        gender = json["gender"].string ?? "未知"
+        if gender == "m" {
+            gender = "男"
+        } else if gender == "f" {
+            gender = "女"
+        }
+        location = json["location"].string ?? "未知"
+        avatarImageURL = NSURL(string: json["profile_image_url"].stringValue)
+        avatar_largeURL = NSURL(string: json["avatar_large"].string ?? (avatarImageURL?.path!)!)
+        avatar_HDURL = NSURL(string: json["avatar_hd"].string ?? (avatarImageURL?.path!)!)
     }
     
     var id: String?
@@ -127,7 +134,6 @@ class Status {
         for picJson in picJSONArr {
             let picPath = picJson[PIC_URLS.Thumbnail.rawValue].string ?? "nilPath"
             pic_urls.append(PictureURL(withThumbnail: picPath))
-            print("\(picPath)")
         }
     }
     
@@ -142,7 +148,6 @@ class Status {
             guard let rawValue = rawSource else {
                 return "nil"
             }
-//            print("rawSource: \(rawValue)")
             let item1 = rawValue.componentsSeparatedByString(">")
             if item1.count >= 2 {
                 let item2 = item1[1].componentsSeparatedByString("<")

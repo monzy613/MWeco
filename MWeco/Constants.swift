@@ -14,10 +14,19 @@ let FONT_TEXT = UIFont(name: "Avenir-Light", size: 15)
 let FONT_RETWEETSCREENNAME = UIFont(name: "Avenir-Light", size: 18)
 let FONT_RETWEETTEXT = UIFont(name: "Avenir-Light", size: 15)
 
+enum TimeLineType {
+    case FriendTimeLine
+    case SelfTimeLine
+}
 
 class Constants {
     static let InitStatusesAmount = 25
+    static let userInfoStatuses = 20
     static let newStatusPlaceholder = "分享新鲜事..."
+}
+
+class StoryboardNames {
+    static let userInfoCell = "UserInfoCell"
 }
 
 //Segues

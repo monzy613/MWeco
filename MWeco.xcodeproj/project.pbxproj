@@ -12,6 +12,7 @@
 		180CE4B51C06A33A00242094 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B41C06A33A00242094 /* Calculator.swift */; };
 		180CE4B91C06A35600242094 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B81C06A35600242094 /* Constants.swift */; };
 		180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4BA1C06A42300242094 /* StatusCell.swift */; };
+		18200BF01C0C7C670026D2A2 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18200BEF1C0C7C670026D2A2 /* UserInfoCell.swift */; };
 		18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E041C02C089009E4C95 /* AsyncButton.swift */; };
 		18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E051C02C089009E4C95 /* AsyncImageView.swift */; };
 		18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E061C02C089009E4C95 /* AutoTextView.swift */; };
@@ -70,7 +71,6 @@
 		18DB1EEC1C0B557300F0D122 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB1EE11C0B556900F0D122 /* pop.framework */; };
 		18DB1EED1C0B557300F0D122 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB1EE11C0B556900F0D122 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */; };
-		18F8B9EE1BFD5773003865E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9ED1BFD5773003865E0 /* ViewController.swift */; };
 		18F8B9F11BFD5773003865E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B9EF1BFD5773003865E0 /* Main.storyboard */; };
 		18F8B9F41BFD5773003865E0 /* MWeco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9F21BFD5773003865E0 /* MWeco.xcdatamodeld */; };
 		18F8B9F61BFD5773003865E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B9F51BFD5773003865E0 /* Assets.xcassets */; };
@@ -221,6 +221,7 @@
 		180CE4B41C06A33A00242094 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		180CE4B81C06A35600242094 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		180CE4BA1C06A42300242094 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		18200BEF1C0C7C670026D2A2 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		18349E041C02C089009E4C95 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		18349E051C02C089009E4C95 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		18349E061C02C089009E4C95 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -284,7 +285,6 @@
 		18DB1ED41C0B556800F0D122 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = ../../../Downloads/IOS_FRAMEWORKS/pop/pop.xcodeproj; sourceTree = "<group>"; };
 		18F8B9E81BFD5773003865E0 /* MWeco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWeco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18F8B9ED1BFD5773003865E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18F8B9F01BFD5773003865E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18F8B9F31BFD5773003865E0 /* MWeco.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MWeco.xcdatamodel; sourceTree = "<group>"; };
 		18F8B9F51BFD5773003865E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -374,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				180CE4BA1C06A42300242094 /* StatusCell.swift */,
+				18200BEF1C0C7C670026D2A2 /* UserInfoCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -480,7 +481,6 @@
 				18F8B9F71BFD5773003865E0 /* LaunchScreen.storyboard */,
 				18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */,
 				186224D91C03262F0030D2D6 /* TestViewController.swift */,
-				18F8B9ED1BFD5773003865E0 /* ViewController.swift */,
 				189AC2161BFD737500BF5ACE /* MyPlayground.playground */,
 				18F8B9F51BFD5773003865E0 /* Assets.xcassets */,
 				18F8BA1E1BFD5AD5003865E0 /* Supporting Files */,
@@ -733,6 +733,7 @@
 				189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */,
 				18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */,
 				186224D81C0323D70030D2D6 /* MZLoadingView.swift in Sources */,
+				18200BF01C0C7C670026D2A2 /* UserInfoCell.swift in Sources */,
 				18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */,
 				18DB1E991C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */,
@@ -743,7 +744,6 @@
 				189AC2381BFDA2A800BF5ACE /* NetWork.swift in Sources */,
 				18DB1E971C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				18349E3D1C02C08A009E4C95 /* TransitionZoom.swift in Sources */,
-				18F8B9EE1BFD5773003865E0 /* ViewController.swift in Sources */,
 				189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */,
 				189AC23B1BFDA48300BF5ACE /* SaveData.swift in Sources */,
 				18349E251C02C08A009E4C95 /* BlurView.swift in Sources */,

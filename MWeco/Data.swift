@@ -9,3 +9,5 @@
 internal var currentTabIndex = 0
 internal var isReturnFromEditVC = false
 internal var publicStatuses = [Status]()
+internal var selfStatuses = [Status]()
+internal var currentUserInfo: Blogger?

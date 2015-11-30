@@ -54,19 +54,37 @@ class NetWork {
         }
     }
     
-    class func getTokenExpireTime(){
+    class func getOauthInfo() {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
             return
         }
         
+        /*
+        {
+        "uid": 1073880650,
+        "appkey": 1352222456,
+        "scope": null,
+        "create_at": 1352267591,
+        "expire_in": 157679471
+        }
+        */
         Alamofire.request(.POST, BaseURL.kGetOauthInfo, parameters: ["access_token": access_Token]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
+            if json["error"].string != nil {
+                print("error: \(json)")
+            } else {
+                //print(json)
+            }
             for (key, value) in json {
                 print("\(key): \(value.stringValue)")
                 switch key {
                 case "expire_in":
                     NSNotificationCenter.defaultCenter().postNotificationName(NotificationNames.ExpireTimeGot, object: nil, userInfo: ["expire_in": value.intValue])
+                case "uid":
+                    let uid = NSNumber(longLong: value.int64Value)
+                    print("uid: \(uid)")
+                    SaveData.set(value: uid, withKey: DataKeys.UID)
                 default:
                     break
                 }
@@ -74,6 +92,27 @@ class NetWork {
         }
     }
     
+    // Mark getUserInfo
+    class func getUserInfo(onSuccess: JSON -> Void, onFailure: Void -> Void) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
+            onFailure()
+            return
+        }
+        
+        let uid = SaveData.get(withKey: .UID) ?? 0
+        
+        Alamofire.request(.GET, BaseURL.userInfo, parameters: ["access_token": access_Token, "uid": uid!]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            if let error = json["error"].string {
+                print("error: \(error)")
+                return
+            } else {
+                print("getUserInfo success")
+            }
+            onSuccess(json)
+        }
+    }
     
     // Mark getStatuses
     class func getPublicTimeline(onSuccess: [Status] -> Void, onFailure: Void -> Void) {
@@ -96,37 +135,43 @@ class NetWork {
         }
     }
     
-    // Mark getFriendtimeline
-    class func getFriendTimeline(onSuccess: [Status] -> Void, onFailure: Void -> Void) {
+    class func getTimeLine(type: TimeLineType, onSuccess: [Status] -> Void, onFailure: Void -> Void) {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
             onFailure()
             return
         }
+        var baseURL = ""
+        var amount = 0
+        switch type {
+        case .FriendTimeLine:
+            baseURL = BaseURL.kFriendTimeLine
+            amount = Constants.InitStatusesAmount
+        case .SelfTimeLine:
+            baseURL = BaseURL.selfTimeLine
+            amount = Constants.userInfoStatuses
+        }
         
-        Alamofire.request(.GET, BaseURL.kFriendTimeLine, parameters: ["access_token": access_Token, "count": Constants.InitStatusesAmount, "page": 1]).responseJSON {
+        Alamofire.request(.GET, baseURL, parameters: ["access_token": access_Token, "count": amount, "page": 1]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
             
-            if let error = response.result.error {
+            if let error = json["error"].string {
                 print("error: \(error)")
+                onFailure()
+                return
             } else {
-                if json["error"].string != nil {
-                    print("error: \(json)")
-                    onFailure()
-                } else {
-                    //print(json)
-                }
+                print("getTimeLine success")
             }
-            let statuses = json["statuses"]
-            var publicStatuses = [Status]()
-            for tmp in statuses {
-                let statusJSON = tmp.1
-                let status = Status(withJSON: statusJSON)
-                publicStatuses.append(status)
+            let statusesJSON = json["statuses"]
+            var tmpStatuses = [Status]()
+            for tmp in statusesJSON {
+                let sJSON = tmp.1
+                tmpStatuses.append(Status(withJSON: sJSON))
             }
-            onSuccess(publicStatuses)
+            onSuccess(tmpStatuses)
         }
     }
+    
     
     // Mark getFollowers
     class func getFollowers() {

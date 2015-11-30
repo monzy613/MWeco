@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18047EB61C089716006D1EFA /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18047EB51C089716006D1EFA /* EditorViewController.swift */; };
 		18047EBE1C08AF61006D1EFA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18047EBD1C08AF61006D1EFA /* Data.swift */; };
-		18047EC01C08B12F006D1EFA /* ReturnNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18047EBF1C08B12F006D1EFA /* ReturnNavigationController.swift */; };
 		180CE4B51C06A33A00242094 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B41C06A33A00242094 /* Calculator.swift */; };
 		180CE4B91C06A35600242094 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B81C06A35600242094 /* Constants.swift */; };
 		180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4BA1C06A42300242094 /* StatusCell.swift */; };
@@ -64,6 +63,12 @@
 		189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */; };
 		18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9D3A81BFF235C00FC714E /* Weibo.swift */; };
 		18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */; };
+		18DB1E961C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB1E8F1C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.m */; };
+		18DB1E971C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB1E911C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m */; };
+		18DB1E981C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB1E931C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.m */; };
+		18DB1E991C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB1E951C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		18DB1EEC1C0B557300F0D122 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB1EE11C0B556900F0D122 /* pop.framework */; };
+		18DB1EED1C0B557300F0D122 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB1EE11C0B556900F0D122 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */; };
 		18F8B9EE1BFD5773003865E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B9ED1BFD5773003865E0 /* ViewController.swift */; };
 		18F8B9F11BFD5773003865E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B9EF1BFD5773003865E0 /* Main.storyboard */; };
@@ -130,6 +135,62 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
+		18DB1EDE1C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC191218162FB53A00E0CC76;
+			remoteInfo = "pop-ios-static";
+		};
+		18DB1EE01C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0B6BE74819FFD3B900762101;
+			remoteInfo = "pop-ios-framework";
+		};
+		18DB1EE21C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC68857F18C7B60000C6194C;
+			remoteInfo = "pop-osx-framework";
+		};
+		18DB1EE41C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0755AE4F1BEA15950094AB41;
+			remoteInfo = "pop-tvos-framework";
+		};
+		18DB1EE61C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
+			remoteInfo = "pop-tests-ios";
+		};
+		18DB1EE81C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC7E319918C93D6500B38170;
+			remoteInfo = "pop-tests-osx";
+		};
+		18DB1EEA1C0B556900F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0755AE8C1BEA19580094AB41;
+			remoteInfo = "pop-tests-tvos";
+		};
+		18DB1EEE1C0B557300F0D122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B6BE74719FFD3B900762101;
+			remoteInfo = "pop-ios-framework";
+		};
 		18F8BA001BFD5773003865E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18F8B9E01BFD5773003865E0 /* Project object */;
@@ -146,6 +207,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				18DB1EED1C0B557300F0D122 /* pop.framework in Embed Frameworks */,
 				189AC2311BFD984B00BF5ACE /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -156,7 +218,6 @@
 /* Begin PBXFileReference section */
 		18047EB51C089716006D1EFA /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		18047EBD1C08AF61006D1EFA /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		18047EBF1C08B12F006D1EFA /* ReturnNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnNavigationController.swift; sourceTree = "<group>"; };
 		180CE4B41C06A33A00242094 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		180CE4B81C06A35600242094 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		180CE4BA1C06A42300242094 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -212,6 +273,15 @@
 		189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTableViewController.swift; sourceTree = "<group>"; };
 		18C9D3A81BFF235C00FC714E /* Weibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weibo.swift; sourceTree = "<group>"; };
 		18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		18DB1E8E1C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		18DB1E8F1C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		18DB1E901C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		18DB1E911C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		18DB1E921C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		18DB1E931C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		18DB1E941C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		18DB1E951C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		18DB1ED41C0B556800F0D122 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = ../../../Downloads/IOS_FRAMEWORKS/pop/pop.xcodeproj; sourceTree = "<group>"; };
 		18F8B9E81BFD5773003865E0 /* MWeco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWeco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8B9ED1BFD5773003865E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DB1EEC1C0B557300F0D122 /* pop.framework in Frameworks */,
 				189AC2301BFD984B00BF5ACE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +321,6 @@
 				187F2BBD1C06DCFF00BD96B4 /* Extensions.swift */,
 				18047EB51C089716006D1EFA /* EditorViewController.swift */,
 				187F2BC71C07632200BD96B4 /* TabBarController.swift */,
-				18047EBF1C08B12F006D1EFA /* ReturnNavigationController.swift */,
 				187F2BC91C076FBD00BD96B4 /* NewStatusMenuViewController.swift */,
 				189AC2401BFDC14300BF5ACE /* TopWeiboTableViewController.swift */,
 				189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */,
@@ -325,11 +395,13 @@
 		189AC22F1BFD983200BF5ACE /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				18DB1E8D1C0B0E1300F0D122 /* TPKeyboardAvoiding */,
+				18349E031C02C089009E4C95 /* Spring */,
 				189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */,
 				18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */,
-				18349E031C02C089009E4C95 /* Spring */,
 				189AC2351BFD9B2700BF5ACE /* SwiftyJSON.swift */,
 				189AC2171BFD981D00BF5ACE /* Alamofire.xcodeproj */,
+				18DB1ED41C0B556800F0D122 /* pop.xcodeproj */,
 				186224D71C0323D70030D2D6 /* MZLoadingView.swift */,
 			);
 			name = ThirdParties;
@@ -348,6 +420,35 @@
 				18047EBD1C08AF61006D1EFA /* Data.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		18DB1E8D1C0B0E1300F0D122 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				18DB1E8E1C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.h */,
+				18DB1E8F1C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.m */,
+				18DB1E901C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.h */,
+				18DB1E911C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m */,
+				18DB1E921C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.h */,
+				18DB1E931C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.m */,
+				18DB1E941C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				18DB1E951C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		18DB1ED51C0B556800F0D122 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18DB1EDF1C0B556900F0D122 /* libpop.a */,
+				18DB1EE11C0B556900F0D122 /* pop.framework */,
+				18DB1EE31C0B556900F0D122 /* pop.framework */,
+				18DB1EE51C0B556900F0D122 /* pop.framework */,
+				18DB1EE71C0B556900F0D122 /* pop-tests.xctest */,
+				18DB1EE91C0B556900F0D122 /* pop-tests.xctest */,
+				18DB1EEB1C0B556900F0D122 /* pop-tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		18F8B9DF1BFD5773003865E0 = {
@@ -421,6 +522,7 @@
 			);
 			dependencies = (
 				189AC2331BFD984B00BF5ACE /* PBXTargetDependency */,
+				18DB1EEF1C0B557300F0D122 /* PBXTargetDependency */,
 			);
 			name = MWeco;
 			productName = MWeco;
@@ -482,6 +584,10 @@
 					ProductGroup = 189AC2181BFD981D00BF5ACE /* Products */;
 					ProjectRef = 189AC2171BFD981D00BF5ACE /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = 18DB1ED51C0B556800F0D122 /* Products */;
+					ProjectRef = 18DB1ED41C0B556800F0D122 /* pop.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -541,6 +647,55 @@
 			remoteRef = 189AC22D1BFD981D00BF5ACE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		18DB1EDF1C0B556900F0D122 /* libpop.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpop.a;
+			remoteRef = 18DB1EDE1C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DB1EE11C0B556900F0D122 /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 18DB1EE01C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DB1EE31C0B556900F0D122 /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 18DB1EE21C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DB1EE51C0B556900F0D122 /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 18DB1EE41C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DB1EE71C0B556900F0D122 /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = 18DB1EE61C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DB1EE91C0B556900F0D122 /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = 18DB1EE81C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DB1EEB1C0B556900F0D122 /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = 18DB1EEA1C0B556900F0D122 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -571,7 +726,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				186224DA1C03262F0030D2D6 /* TestViewController.swift in Sources */,
-				18047EC01C08B12F006D1EFA /* ReturnNavigationController.swift in Sources */,
 				18F8B9F41BFD5773003865E0 /* MWeco.xcdatamodeld in Sources */,
 				18349E381C02C08A009E4C95 /* SpringLabel.swift in Sources */,
 				18349E3A1C02C08A009E4C95 /* SpringTextView.swift in Sources */,
@@ -580,12 +734,14 @@
 				18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */,
 				186224D81C0323D70030D2D6 /* MZLoadingView.swift in Sources */,
 				18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */,
+				18DB1E991C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */,
 				18349E2C1C02C08A009E4C95 /* DesignableView.swift in Sources */,
 				18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */,
 				189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */,
 				187F2BC81C07632200BD96B4 /* TabBarController.swift in Sources */,
 				189AC2381BFDA2A800BF5ACE /* NetWork.swift in Sources */,
+				18DB1E971C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				18349E3D1C02C08A009E4C95 /* TransitionZoom.swift in Sources */,
 				18F8B9EE1BFD5773003865E0 /* ViewController.swift in Sources */,
 				189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */,
@@ -605,6 +761,7 @@
 				18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */,
 				18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */,
 				18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */,
+				18DB1E961C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				189AC2411BFDC14300BF5ACE /* TopWeiboTableViewController.swift in Sources */,
 				180CE4B91C06A35600242094 /* Constants.swift in Sources */,
 				18349E2F1C02C08A009E4C95 /* KeyboardLayoutConstraint.swift in Sources */,
@@ -626,6 +783,7 @@
 				18349E301C02C08A009E4C95 /* LoadingView.swift in Sources */,
 				187F2BBE1C06DCFF00BD96B4 /* Extensions.swift in Sources */,
 				18349E2A1C02C08A009E4C95 /* DesignableTextField.swift in Sources */,
+				18DB1E981C0B0E1300F0D122 /* TPKeyboardAvoidingTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +802,11 @@
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
 			targetProxy = 189AC2321BFD984B00BF5ACE /* PBXContainerItemProxy */;
+		};
+		18DB1EEF1C0B557300F0D122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "pop-ios-framework";
+			targetProxy = 18DB1EEE1C0B557300F0D122 /* PBXContainerItemProxy */;
 		};
 		18F8BA011BFD5773003865E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

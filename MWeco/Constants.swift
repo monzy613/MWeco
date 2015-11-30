@@ -25,6 +25,7 @@ class Segues {
     static let StatusMenu = "StatusMenuSegue"
     static let NewStatus = "NewStatusSegue"
     static let Return = "ReturnSegue"
+    static let Repost = "RepostSegue"
 }
 
 

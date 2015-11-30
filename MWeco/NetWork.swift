@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class NetWork {
     
     // Mark getAccess_Token
@@ -135,6 +136,21 @@ class NetWork {
     class func uploadTextStatus(text: String) {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
         Alamofire.request(.POST, BaseURL.kTextStatus, parameters: ["access_token": access_Token, "status": text, ]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                print("success: \n\(json)")
+            }
+        }
+    }
+    
+    // Mark repost
+    class func repost(originStatusID id: Int64, withText text: String) {
+        guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
+        Alamofire.request(.POST, BaseURL.repost, parameters: ["access_token": access_Token, "id": NSNumber(longLong: id), "status": text]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
             

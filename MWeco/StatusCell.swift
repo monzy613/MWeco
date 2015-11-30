@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol StatusCellDelegate {
+    func repost(withSender sender: AnyObject)
+}
+
 class StatusCell: UITableViewCell {
     
+    
+    var delegate: StatusCellDelegate?
     //data
     var status: Status!
     
@@ -288,6 +294,7 @@ class StatusCell: UITableViewCell {
         
         //repostButton
         repostButton = SpringButton()
+        repostButton?.addTarget(self, action: "repostButtonPressed", forControlEvents: .TouchUpInside)
         repostButton?.setImage(UIImage(named: ImageNames.repost_unactive), forState: .Normal)
         repostButton?.setTitle("\(status.reposts_count)", forState: .Normal)
         repostButton?.setTitleColor(UIColor.darkTextColor(), forState: .Normal)
@@ -296,7 +303,8 @@ class StatusCell: UITableViewCell {
         repostButton?.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(repostButton!)
         contentView.addConstraints([
-            NSLayoutConstraint(item: repostButton!, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 1, constant: ItemSize.ButtonHeight),
+            NSLayoutConstraint(item: repostButton!, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height
+                , multiplier: 1, constant: ItemSize.ButtonHeight),
             NSLayoutConstraint(item: repostButton!, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1, constant: width),
             NSLayoutConstraint(item: repostButton!, attribute: .Left, relatedBy: .Equal, toItem: attitudeButton!, attribute: .Right, multiplier: 1, constant: 5),
             NSLayoutConstraint(item: repostButton!, attribute: .Bottom, relatedBy: .Equal, toItem: attitudeButton!, attribute: .Bottom, multiplier: 1, constant: 0)
@@ -336,8 +344,14 @@ class StatusCell: UITableViewCell {
         }
     }
     
-    func repostButtonPressed() {}
-    func commentButtonPressed() {}
+    func repostButtonPressed() {
+        repostButton!.animation = "pop"
+        repostButton?.animate()
+        delegate?.repost(withSender: self)
+    }
+    
+    func commentButtonPressed() {
+    }
     
     
     

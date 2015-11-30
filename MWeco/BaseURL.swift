@@ -28,6 +28,8 @@ struct BaseURL {
     static let attitude = "https://api.weibo.com/2/attitudes/create.json"
     static let destroyAttitude = "https://api.weibo.com/2/attitudes/destroy.json"
     
+    
+    static let repost = "https://api.weibo.com/2/statuses/repost.json"
     static let kBaseURL = "https://api.weibo.com/2/"
     static let kStatusesPath = "statuses/friends_timeline.json"
     static let followers = "https://api.weibo.com/2/friendships/followers.json"

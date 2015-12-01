@@ -15,7 +15,7 @@ class SelfTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentTabIndex = 4
-        //initUI()
+        initUI()
     }
     
     func initUI() {

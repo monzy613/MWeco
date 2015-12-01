@@ -28,6 +28,12 @@ class UserInfoCell: UITableViewCell {
             backgroundImageView.clipsToBounds = true
         }
     }
+    
+    @IBOutlet weak var statusAmountLabel: UILabel!
+    @IBOutlet weak var followingAmountLabel: UILabel!
+    @IBOutlet weak var followerAmountLabel: UILabel!
+    
+    
     @IBOutlet var currentStatusButton: SpringButton!
     @IBOutlet var originalStatusButton: SpringButton!
     @IBOutlet var albumButton: SpringButton!
@@ -36,6 +42,9 @@ class UserInfoCell: UITableViewCell {
     
     func configure(withUserInfo userInfo: Blogger) {
         self.selectionStyle = .None
+        statusAmountLabel.text = "\(userInfo.statuses_count)"
+        followingAmountLabel.text = "\(userInfo.friends_count)"
+        followerAmountLabel.text = "\(userInfo.followers_count)"
         screenNameLabel.text = userInfo.screen_name ?? "screenName"
         genderLabel.text = userInfo.gender ?? "未知"
         locationLabel.text = userInfo.location ?? "未知"

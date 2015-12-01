@@ -59,6 +59,10 @@ class Blogger {
             gender = "女"
         }
         location = json["location"].string ?? "未知"
+        followers_count = json["followers_count"].int ?? 0
+        friends_count = json["friends_count"].int ?? 0
+        statuses_count = json["statuses_count"].int ?? 0
+        bi_followers_count = json["bi_followers_count"].int ?? 0
         avatarImageURL = NSURL(string: json["profile_image_url"].stringValue)
         avatar_largeURL = NSURL(string: json["avatar_large"].string ?? (avatarImageURL?.path!)!)
         avatar_HDURL = NSURL(string: json["avatar_hd"].string ?? (avatarImageURL?.path!)!)

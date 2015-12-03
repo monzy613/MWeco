@@ -10,11 +10,31 @@ import UIKit
 
 class SelfTableViewController: UITableViewController {
     
+    //some constants
+    let buttonHighlightedColor = UIColor.blueColor()
+    let buttonNormalColor = UIColor(hex6: 0x8B8FFF)
+    
+    
     //20 statuses and 1 userInfo
+    
+    //buttons
+    let recentButton = SpringButton()
+    let bySelfButton = SpringButton()
+    let albumButton = SpringButton()
+    let favorButton = SpringButton()
+    
+    let statusesButton = SpringButton()
+    let friendsButton = SpringButton()
+    let followersButton = SpringButton()
+    
+    
+    //data
+    var statuses = [Status]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         currentTabIndex = 4
+        statuses = selfStatuses
         initUI()
     }
     
@@ -30,7 +50,7 @@ class SelfTableViewController: UITableViewController {
         guard let blogger = currentUserInfo else {
             return UIView()
         }
-        let lineWidth: CGFloat = 0.5
+        let lineWidth: CGFloat = 0.3
         let headerView = UIView()
         let width = UIScreen.mainScreen().bounds.width
         let height = width * 0.725 + lineWidth * 2
@@ -97,7 +117,6 @@ class SelfTableViewController: UITableViewController {
         headerView.addSubview(genderLabel)
         headerView.addSubview(locationLabel)
         
-        
         //amount labels
         amountLabel(headerView, title: "微博", amount: blogger.statuses_count, startY: (bgHeight + aWidth) / 2, superWidth: width, space: space, location: 0)
         amountLabel(headerView, title: "关注", amount: blogger.friends_count, startY: (bgHeight + aWidth) / 2, superWidth: width, space: space, location: 1)
@@ -107,22 +126,23 @@ class SelfTableViewController: UITableViewController {
         let btWidth = (width - 3 * lineWidth) / 4
         let btHeight = (height - bgHeight - lineWidth)
         let startY = bgHeight + lineWidth
-        let recentButton = SpringButton()
-        let bySelfButton = SpringButton()
-        let albumButton = SpringButton()
-        let favorButton = SpringButton()
         recentButton.setTitle("最近", forState: .Normal)
-        recentButton.titleLabel?.font = UIFont(name: "Avenir-Regular", size: 15)
-        recentButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        recentButton.titleLabel?.font = UIFont(name: "Avenir-Light", size: 15)
+        recentButton.setTitleColor(buttonHighlightedColor, forState: .Normal)
+        recentButton.addTarget(self, action: "recentButtonPressed:", forControlEvents: .TouchUpInside)
         bySelfButton.setTitle("原创", forState: .Normal)
-        bySelfButton.titleLabel?.font = UIFont(name: "Avenir-Regular", size: 15)
-        bySelfButton.setTitleColor(UIColor(hex6: 0x8B8FFF), forState: .Normal)
+        bySelfButton.titleLabel?.font = UIFont(name: "Avenir-Light", size: 15)
+        bySelfButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        bySelfButton.addTarget(self, action: "bySelfButtonPressed:", forControlEvents: .TouchUpInside)
         albumButton.setTitle("相册", forState: .Normal)
-        albumButton.titleLabel?.font = UIFont(name: "Avenir-Regular", size: 15)
-        albumButton.setTitleColor(UIColor(hex6: 0x8B8FFF), forState: .Normal)
+        albumButton.titleLabel?.font = UIFont(name: "Avenir-Light", size: 15)
+        albumButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        albumButton.addTarget(self, action: "albumButtonPressed:", forControlEvents: .TouchUpInside)
         favorButton.setTitle("收藏", forState: .Normal)
-        favorButton.titleLabel?.font = UIFont(name: "Avenir-Regular", size: 15)
-        favorButton.setTitleColor(UIColor(hex6: 0x8B8FFF), forState: .Normal)
+        favorButton.titleLabel?.font = UIFont(name: "Avenir-Light", size: 15)
+        favorButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        favorButton.addTarget(self, action: "favorButtonPressed:", forControlEvents: .TouchUpInside)
+        
         recentButton.frame = CGRect(x: 0, y: startY, width: btWidth, height: btHeight)
         bySelfButton.frame = CGRect(x: btWidth + lineWidth, y: startY, width: btWidth, height: btHeight)
         albumButton.frame = CGRect(x: 2 * (btWidth + lineWidth) , y: startY, width: btWidth, height: btHeight)
@@ -131,6 +151,15 @@ class SelfTableViewController: UITableViewController {
         headerView.addSubview(bySelfButton)
         headerView.addSubview(albumButton)
         headerView.addSubview(favorButton)
+        
+        //vertical lines
+        for i in 0...2 {
+            let vLineHeight = 0.8 * btHeight
+            let vLine = UIView()
+            vLine.backgroundColor = UIColor.blueColor()
+            vLine.frame = CGRect(x: btWidth * (CGFloat(i) + 1), y: startY + (btHeight - vLineHeight) / 2, width: lineWidth, height: vLineHeight)
+            headerView.addSubview(vLine)
+        }
         
         //bottomline
         let bottomLine = UIView()
@@ -151,26 +180,35 @@ class SelfTableViewController: UITableViewController {
         switch location {
         case 0:
             startX = 0
+            statusesButton.frame = CGRect(x: startX, y: startY, width: labelWidth, height: amountLabelHeight + labelSpace * 2 + titleLabelHeight)
+            statusesButton.addTarget(self, action: "statusesButtonPressed:", forControlEvents: .TouchUpInside)
+            rootView.addSubview(statusesButton)
         case 1:
             startX = labelWidth
+            friendsButton.frame = CGRect(x: startX, y: startY, width: labelWidth, height: amountLabelHeight + labelSpace * 2 + titleLabelHeight)
+            friendsButton.addTarget(self, action: "friendsButtonPressed:", forControlEvents: .TouchUpInside)
+            rootView.addSubview(friendsButton)
         case 2:
             startX = 2 * labelWidth
+            followersButton.frame = CGRect(x: startX, y: startY, width: labelWidth, height: amountLabelHeight + labelSpace * 2 + titleLabelHeight)
+            followersButton.addTarget(self, action: "followersButtonPressed:", forControlEvents: .TouchUpInside)
+            rootView.addSubview(followersButton)
         default:
             break
         }
         
         amountLabel.text = "\(amount)"
         amountLabel.textAlignment = .Center
-        amountLabel.font = UIFont(name: "Avenir-Regular", size: amountLabelHeight)
+        amountLabel.font = UIFont(name: "Avenir-Light", size: amountLabelHeight)
         amountLabel.textColor = UIColor.whiteColor()
         amountLabel.frame = CGRect(x: startX, y: startY + labelSpace * 2, width: labelWidth, height: amountLabelHeight)
         
         let titleLabel = UILabel()
         titleLabel.text = title
+        titleLabel.font = UIFont(name: "Avenir-Medium", size: titleLabelHeight)
         titleLabel.textAlignment = .Center
-        titleLabel.font = UIFont(name: "Avenir-Regular", size: titleLabelHeight)
         titleLabel.textColor = UIColor.whiteColor()
-        titleLabel.frame = CGRect(x: startX, y: startY + labelSpace * 2 + amountLabelHeight, width: labelWidth, height: titleLabelHeight)
+        titleLabel.frame = CGRect(x: startX, y: startY + labelSpace * 3 + amountLabelHeight, width: labelWidth, height: titleLabelHeight)
         
         
         rootView.addSubview(amountLabel)
@@ -183,20 +221,81 @@ class SelfTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selfStatuses.count
+        return statuses.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = StatusCell(withStatus: selfStatuses[indexPath.row], style: .Default, reuseIdentifier: "StatusCell")
+        let cell = StatusCell(withStatus: statuses[indexPath.row], style: .Default, reuseIdentifier: "StatusCell")
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return Calculator.statusCellHeight(withStatus: selfStatuses[indexPath.row], andScreenWidth: UIScreen.mainScreen().bounds.width)
+        return Calculator.statusCellHeight(withStatus: statuses[indexPath.row], andScreenWidth: UIScreen.mainScreen().bounds.width)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func recentButtonPressed(sender: SpringButton) {
+        sender.animation = "pop"
+        sender.animate()
+        sender.setTitleColor(buttonHighlightedColor, forState: .Normal)
+        bySelfButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        albumButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        favorButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        if statuses != selfStatuses {
+            statuses = selfStatuses
+            tableView.reloadData()
+        }
+    }
+    
+    func bySelfButtonPressed(sender: SpringButton) {
+        sender.animation = "pop"
+        sender.animate()
+        sender.setTitleColor(buttonHighlightedColor, forState: .Normal)
+        recentButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        albumButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        favorButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        if statuses == selfStatuses {
+            statuses = []
+            for status in selfStatuses {
+                if status.hasRetweet == false {
+                    statuses.append(status)
+                }
+            }
+            tableView.reloadData()
+        }
+    }
+    
+    func albumButtonPressed(sender: SpringButton) {
+        sender.animation = "pop"
+        sender.animate()
+        sender.setTitleColor(buttonHighlightedColor, forState: .Normal)
+        bySelfButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        recentButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        favorButton.setTitleColor(buttonNormalColor, forState: .Normal)
+    }
+    
+    func favorButtonPressed(sender: SpringButton) {
+        sender.animation = "pop"
+        sender.animate()
+        sender.setTitleColor(buttonHighlightedColor, forState: .Normal)
+        bySelfButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        albumButton.setTitleColor(buttonNormalColor, forState: .Normal)
+        recentButton.setTitleColor(buttonNormalColor, forState: .Normal)
+    }
+    
+    func statusesButtonPressed(sender: SpringButton) {
+        print("statuses")
+    }
+    
+    func friendsButtonPressed(sender: SpringButton) {
+        print("friends")
+    }
+    
+    func followersButtonPressed(sedner: SpringButton) {
+        print("followers")
     }
 
 }

@@ -43,12 +43,13 @@ class PictureURL {
     
 }
 
-class Blogger {
+class Blogger: NSObject {
     
-    init() {
+    override init() {
     }
     
     init(withJSON json: JSON) {
+        super.init()
         id = json["id"].string ?? "nil"
         name = json["name"].string ?? "nil"
         screen_name = json["screen_name"].string ?? self.name
@@ -68,6 +69,23 @@ class Blogger {
         avatar_HDURL = NSURL(string: json["avatar_hd"].string ?? (avatarImageURL?.path!)!)
     }
     
+    override func isEqual(object: AnyObject?) -> Bool {
+        var isEqual = false
+        if object?.isKindOfClass(Blogger) == true {
+            if object === self {
+                isEqual = true
+            } else {
+                guard let obj = object as? Blogger else {return false}
+                if id == obj.id {
+                    isEqual = true
+                } else {
+                    isEqual = false
+                }
+            }
+        }
+        return isEqual
+    }
+    
     var id: String?
     var blogger_class: Int?
     var screen_name: String?
@@ -76,7 +94,7 @@ class Blogger {
     var province: Int?
     var city: Int?
     var location: String?
-    var description: String?
+    var myDescription: String?
     var blogURL: NSURL?
     var avatarImageURL: NSURL?
     var profileURL: NSURL?
@@ -103,12 +121,30 @@ class Blogger {
     var lang = "zh-cn" // "en", "zh-cn", "zh-tw"
 }
 
-class Status {
+class Status: NSObject {
     
-    init() {
+    override func isEqual(object: AnyObject?) -> Bool {
+        var isEqual = false
+        if object?.isKindOfClass(Status) == true {
+            if object === self {
+                isEqual = true
+            } else {
+                guard let obj = object as? Status else {return false}
+                if id == obj.id {
+                    isEqual = true
+                } else {
+                    isEqual = false
+                }
+            }
+        }
+        return isEqual
+    }
+    
+    override init() {
     }
     
     init(withJSON json: JSON) {
+        super.init()
         self.created_at = json["created_at"].string ?? "nil"
         self.id = json["id"].int64 ?? 0
         self.mid = json["mid"].int64 ?? 0

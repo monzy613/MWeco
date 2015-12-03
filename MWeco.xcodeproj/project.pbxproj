@@ -12,7 +12,6 @@
 		180CE4B51C06A33A00242094 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B41C06A33A00242094 /* Calculator.swift */; };
 		180CE4B91C06A35600242094 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4B81C06A35600242094 /* Constants.swift */; };
 		180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE4BA1C06A42300242094 /* StatusCell.swift */; };
-		18200BF01C0C7C670026D2A2 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18200BEF1C0C7C670026D2A2 /* UserInfoCell.swift */; };
 		18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E041C02C089009E4C95 /* AsyncButton.swift */; };
 		18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E051C02C089009E4C95 /* AsyncImageView.swift */; };
 		18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18349E061C02C089009E4C95 /* AutoTextView.swift */; };
@@ -221,7 +220,6 @@
 		180CE4B41C06A33A00242094 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		180CE4B81C06A35600242094 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		180CE4BA1C06A42300242094 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
-		18200BEF1C0C7C670026D2A2 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		18349E041C02C089009E4C95 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		18349E051C02C089009E4C95 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		18349E061C02C089009E4C95 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -374,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				180CE4BA1C06A42300242094 /* StatusCell.swift */,
-				18200BEF1C0C7C670026D2A2 /* UserInfoCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -733,7 +730,6 @@
 				189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */,
 				18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */,
 				186224D81C0323D70030D2D6 /* MZLoadingView.swift in Sources */,
-				18200BF01C0C7C670026D2A2 /* UserInfoCell.swift in Sources */,
 				18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */,
 				18DB1E991C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */,

@@ -11,6 +11,11 @@ import UIKit
 class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     
     private var loadingView: MZLoadingView?
+    private var loadingMoreView: UIView?
+    private var loadingMoreActivator: UIActivityIndicatorView?
+    private var isLoadingMore = false
+    private var isFirstLoad = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentTabIndex = 0
@@ -26,21 +31,39 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     private func initUI() {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.tableFooterView = UIView()
+        
+        let width = UIScreen.mainScreen().bounds.width
+        let height = width * 0.5
+        loadingMoreView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        let line = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 0.5))
+        line.backgroundColor = UIColor.darkGrayColor()
+        loadingMoreView?.addSubview(line)
+        loadingMoreActivator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        let activatorWidth: CGFloat = height
+        loadingMoreActivator?.frame = CGRect(x: ((loadingMoreView?.frame.width)! - activatorWidth) / 2, y: ((loadingMoreView?.frame.height)! - activatorWidth) / 2, width: activatorWidth, height: activatorWidth)
+        loadingMoreView?.addSubview(loadingMoreActivator!)
+        tableView.tableFooterView = loadingMoreView!
     }
+    
     
     func loadStatus() {
         loadingView = MZLoadingView(rootView: (self.navigationController?.view)!, effect: UIBlurEffect(style: .Dark))
         loadingView?.start()
+        var since_id: Int64 = 0
+        if publicStatuses.count != 0 {
+            since_id = publicStatuses[0].id ?? 0
+        }
         NetWork.getTimeLine(.FriendTimeLine
+            , since_id: since_id
+            , max_id: 0
             , onSuccess: {
-                status in
+                [unowned self] status in
                 print("onSuccess \(status.count) new weibo")
                 NetWork.getUserInfo({
                     json in
                     currentUserInfo = Blogger(withJSON: json)
                     }, onFailure: {})
-                publicStatuses = status
+                publicStatuses = (status + publicStatuses)
                 self.tableView.reloadData()
                 if self.refreshControl?.refreshing == true {
                     self.refreshControl?.endRefreshing()
@@ -48,12 +71,19 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
                 if self.loadingView?.isAnimating() == true {
                     self.loadingView?.stop()
                 }
-                NetWork.getTimeLine(.SelfTimeLine
-                    , onSuccess: {
-                        status in
-                        selfStatuses = status
-                    }, onFailure: {
-                })
+                if self.isFirstLoad {
+                    self.isFirstLoad = false
+                    NetWork.getTimeLine(.SelfTimeLine
+                        , since_id: 0
+                        , max_id: 0
+                        , onSuccess: {
+                            status in
+                            selfStatuses = status
+                        }, onFailure: {
+                    })
+                    NetWork.getFriends(ofType: .Following)
+                    NetWork.getFriends(ofType: .FollowMe)
+                }
             }, onFailure: {
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
         })
@@ -88,6 +118,10 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! StatusCell
+        if selectedCell.retweetView != nil {
+            (selectedCell.retweetView!).backgroundColor = Colors.retweetBackgroundColor
+        }
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -110,6 +144,30 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
             default:
                 break
             }
+        }
+    }
+    
+    
+    //load more
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if (isLoadingMore == false) && scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) {
+            print("load more")
+            loadingMoreActivator?.startAnimating()
+            isLoadingMore = true
+            if publicStatuses.count == 0 {return}
+            var max_id = (publicStatuses[publicStatuses.count - 1].id ?? 0)
+            if max_id > 0 {
+                max_id -= 1
+            }
+            NetWork.getTimeLine(.FriendTimeLine, since_id: 0, max_id: max_id, onSuccess: {
+                [unowned self] statuses in
+                publicStatuses += statuses
+                self.tableView.reloadData()
+                self.isLoadingMore = false
+                print("current timeline count: \(publicStatuses.count)")
+                self.loadingMoreActivator?.stopAnimating()
+                }, onFailure: {
+            })
         }
     }
     

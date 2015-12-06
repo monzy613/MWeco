@@ -20,7 +20,7 @@ enum TimeLineType {
 }
 
 class Constants {
-    static let InitStatusesAmount = 1
+    static let InitStatusesAmount = 25
     static let userInfoStatuses = 20
     static let newStatusPlaceholder = "分享新鲜事..."
 }
@@ -35,6 +35,8 @@ class Segues {
     static let NewStatus = "NewStatusSegue"
     static let Return = "ReturnSegue"
     static let Repost = "RepostSegue"
+    static let following = "FollowingListSegue"
+    static let follower = "FollowerListSegue"
 }
 
 
@@ -51,6 +53,8 @@ class ImageNames {
     
     static let addButton = "addButton"
     static let addIcon = "icon-add-no-circle"
+    
+    static let defaultAvatar = "guapi"
 }
 
 // tabbar item image names 
@@ -97,6 +101,7 @@ class ImageType {
 class Colors {
     static let pictureBackgroundColor = UIColor.clearColor()
     static let retweetBackgroundColor = UIColor(hex6: 0xE6E6E6)
+    static let userInfoFollowButton = UIColor(hex6: 0xCC66FF)
 }
 
 class ItemSize {

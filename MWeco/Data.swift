@@ -11,3 +11,5 @@ internal var isReturnFromEditVC = false
 internal var publicStatuses = [Status]()
 internal var selfStatuses = [Status]()
 internal var currentUserInfo: Blogger?
+internal var followings = [Blogger]()
+internal var followers = [Blogger]()

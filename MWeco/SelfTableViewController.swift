@@ -291,11 +291,27 @@ class SelfTableViewController: UITableViewController {
     }
     
     func friendsButtonPressed(sender: SpringButton) {
-        print("friends")
+        print("followings")
+        performSegueWithIdentifier(Segues.following, sender: self)
     }
     
     func followersButtonPressed(sedner: SpringButton) {
         print("followers")
+        performSegueWithIdentifier(Segues.follower, sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {return}
+        guard let destViewController = (segue.destinationViewController as? UINavigationController)?.viewControllers[0] as? UserListController else {return}
+        
+        switch identifier {
+        case Segues.following:
+            destViewController.initData(withType: .Following)
+        case Segues.follower:
+            destViewController.initData(withType: .FollowMe)
+        default:
+            break
+        }
     }
 
 }

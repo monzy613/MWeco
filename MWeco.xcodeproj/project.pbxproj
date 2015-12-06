@@ -75,6 +75,8 @@
 		F4689CFC1C0DAB7400465BC8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CBE1C0DAB3000465BC8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4689CFF1C0DAB7400465BC8 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CF01C0DAB4400465BC8 /* pop.framework */; };
 		F4689D001C0DAB7400465BC8 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CF01C0DAB4400465BC8 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F47B72D41C11371000BBF494 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D31C11371000BBF494 /* UserInfoCell.swift */; };
+		F47B72D61C113C7C00BBF494 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D51C113C7C00BBF494 /* UserListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,6 +293,8 @@
 		18F8BA051BFD5773003865E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4689CB31C0DAB3000465BC8 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		F4689CE31C0DAB4400465BC8 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = pop/pop.xcodeproj; sourceTree = "<group>"; };
+		F47B72D31C11371000BBF494 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		F47B72D51C113C7C00BBF494 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +331,7 @@
 				186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */,
 				189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */,
 				187F2BC51C06DF3100BD96B4 /* PreviewPictureController.swift */,
+				F47B72D51C113C7C00BBF494 /* UserListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				180CE4BA1C06A42300242094 /* StatusCell.swift */,
+				F47B72D31C11371000BBF494 /* UserInfoCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -728,6 +734,7 @@
 				18349E3A1C02C08A009E4C95 /* SpringTextView.swift in Sources */,
 				18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */,
 				189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */,
+				F47B72D61C113C7C00BBF494 /* UserListController.swift in Sources */,
 				18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */,
 				186224D81C0323D70030D2D6 /* MZLoadingView.swift in Sources */,
 				18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */,
@@ -741,6 +748,7 @@
 				18DB1E971C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				18349E3D1C02C08A009E4C95 /* TransitionZoom.swift in Sources */,
 				189AC2111BFD6CEC00BF5ACE /* BaseURL.swift in Sources */,
+				F47B72D41C11371000BBF494 /* UserInfoCell.swift in Sources */,
 				189AC23B1BFDA48300BF5ACE /* SaveData.swift in Sources */,
 				18349E251C02C08A009E4C95 /* BlurView.swift in Sources */,
 				180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */,

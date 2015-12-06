@@ -64,9 +64,12 @@ class Blogger: NSObject {
         friends_count = json["friends_count"].int ?? 0
         statuses_count = json["statuses_count"].int ?? 0
         bi_followers_count = json["bi_followers_count"].int ?? 0
+        myDescription = json["description"].string ?? "什么都没有说哟～"
         avatarImageURL = NSURL(string: json["profile_image_url"].stringValue)
-        avatar_largeURL = NSURL(string: json["avatar_large"].string ?? (avatarImageURL?.path!)!)
-        avatar_HDURL = NSURL(string: json["avatar_hd"].string ?? (avatarImageURL?.path!)!)
+        avatar_largeURL = NSURL(string: json["avatar_large"].string ?? (avatarImageURL?.path ?? "")!)
+        avatar_HDURL = NSURL(string: json["avatar_hd"].string ?? (avatarImageURL?.path ?? "")!)
+        isFollowMe = json["follow_me"].bool ?? false
+        following = json["following"].bool ?? false
     }
     
     override func isEqual(object: AnyObject?) -> Bool {
@@ -116,7 +119,8 @@ class Blogger: NSObject {
     var allow_all_comment: Bool?
     var avatar_largeURL: NSURL?
     var avatar_HDURL: NSURL?
-    var isFollowMe: Bool?
+    var isFollowMe: Bool = false
+    var following: Bool = false
     var isOnline: Bool?
     var lang = "zh-cn" // "en", "zh-cn", "zh-tw"
 }

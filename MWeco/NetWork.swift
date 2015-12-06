@@ -135,7 +135,7 @@ class NetWork {
         }
     }
     
-    class func getTimeLine(type: TimeLineType, onSuccess: [Status] -> Void, onFailure: Void -> Void) {
+    class func getTimeLine(type: TimeLineType, since_id: Int64, max_id: Int64, onSuccess: [Status] -> Void, onFailure: Void -> Void) {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
             onFailure()
             return
@@ -151,7 +151,7 @@ class NetWork {
             amount = Constants.userInfoStatuses
         }
         
-        Alamofire.request(.GET, baseURL, parameters: ["access_token": access_Token, "count": amount, "page": 1]).responseJSON {
+        Alamofire.request(.GET, baseURL, parameters: ["access_token": access_Token, "count": amount, "page": 1, "since_id": NSNumber(longLong: since_id), "max_id": NSNumber(longLong: max_id)]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])
             
@@ -173,9 +173,6 @@ class NetWork {
     }
     
     
-    // Mark getFollowers
-    class func getFollowers() {
-    }
     
     // Mark upload a text status
     class func uploadTextStatus(text: String) {
@@ -233,6 +230,44 @@ class NetWork {
             } else {
                 print("success: \n\(json)")
             }
+        }
+    }
+    
+    // Mark get followings
+    class func getFriends(ofType type: UserListType) {
+        guard let access_token = SaveData.get(withKey: .ACCESS_TOKEN), let uid = SaveData.get(withKey: .UID) else {return}
+        let url = ((type == UserListType.Following) ?BaseURL.followings:BaseURL.followers)
+        Alamofire.request(.GET, url, parameters: ["access_token": access_token, "uid": uid]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            if type == .FollowMe {
+                print("--------------------\n\(json)\n----------------------------")
+            }
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                let users = json["users"]
+                for tmp in users {
+                    let user = tmp.1
+                    switch type {
+                    case .Following:
+                        followings.append(Blogger(withJSON: user))
+                    case .FollowMe:
+                        followers.append(Blogger(withJSON: user))
+                    }
+                }
+            }
+        }
+    }
+    
+    // Mark getFollowerIDs
+    class func getFollowerIDs() {
+        guard let access_token = SaveData.get(withKey: .ACCESS_TOKEN), let uid = SaveData.get(withKey: .UID) else {return}
+        
+        Alamofire.request(.GET, BaseURL.followerIDs, parameters: ["access_token": access_token, "uid": uid]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            print(json)
         }
     }
 }

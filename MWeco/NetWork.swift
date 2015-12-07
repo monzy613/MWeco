@@ -241,7 +241,7 @@ class NetWork {
             response in
             let json = JSON(response.result.value ?? [])
             if type == .FollowMe {
-                print("--------------------\n\(json)\n----------------------------")
+                //print("--------------------\n\(json)\n----------------------------")
             }
             if let error = json["error"].string {
                 print("error: \(error)")
@@ -286,4 +286,24 @@ class NetWork {
         }
     }
     
+    
+    // Mark showComment
+    class func getComments(byStatusID id: Int64, onSuccess: [Comment] -> Void) {
+        guard let access_token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
+        Alamofire.request(.GET, BaseURL.commentShow, parameters: ["access_token": access_token, "id": NSNumber(longLong: id)]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                let comments = json["comments"]
+                var commentsArr = [Comment]()
+                for tmp in comments {
+                    commentsArr.append(Comment(withJSON: tmp.1))
+                }
+                print("\(commentsArr.count) comments get")
+                onSuccess(commentsArr)
+            }
+        }
+    }
 }

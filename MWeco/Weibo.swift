@@ -43,6 +43,26 @@ class PictureURL {
     
 }
 
+class Comment: NSObject {
+    var user: Blogger
+    var created_at: String
+    var id: Int64
+    var text: String
+    var mid: String
+    var reply_comment: Comment?
+    
+    init(withJSON json: JSON) {
+        user = Blogger(withJSON: json["user"])
+        created_at = json["created_at"].string ?? ""
+        id = json["id"].int64 ?? 0
+        text = json["text"].string ?? ""
+        mid = json["mid"].string ?? ""
+        if json["reply_comment"] != JSON.null {
+            reply_comment = Comment(withJSON: json["reply_comment"])
+        }
+    }
+}
+
 class Blogger: NSObject {
     
     override init() {

@@ -122,6 +122,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
         if selectedCell.retweetView != nil {
             (selectedCell.retweetView!).backgroundColor = Colors.retweetBackgroundColor
         }
+        performSegueWithIdentifier(Segues.detailStatus, sender: publicStatuses[indexPath.row])
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -159,6 +160,16 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
                     let commentViewController = segue.destinationViewController as! CommentFloatingViewController
                     commentViewController.tbController = tbController
                     commentViewController.statusId = (sender as! StatusCell).status.id
+                }
+            case Segues.detailStatus:
+                print("performSegue: DetailStatusSegue")
+                if let dest = segue.destinationViewController as? DetailStatusController, let tbController = self.tabBarController as? TabBarController {
+                    tbController.hideTabbar()
+                    dest.tbController = tbController
+                    NetWork.getComments(byStatusID: (sender as! Status).id!, onSuccess: {
+                        comments in
+                        dest.comments = comments
+                    })
                 }
             default:
                 break

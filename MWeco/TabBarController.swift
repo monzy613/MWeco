@@ -25,6 +25,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         setTabSelected(withIndex: selectedIndex)
         print("CurrentTab: \(currentTabIndex)")
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("tab vwa")
+    }
 
     func initAddButton() {
         let height = tabBar.frame.height * 0.85

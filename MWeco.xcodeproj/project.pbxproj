@@ -77,6 +77,8 @@
 		F4689CFC1C0DAB7400465BC8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CBE1C0DAB3000465BC8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4689CFF1C0DAB7400465BC8 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CF01C0DAB4400465BC8 /* pop.framework */; };
 		F4689D001C0DAB7400465BC8 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CF01C0DAB4400465BC8 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F47A1AA31C15A80700DD6352 /* CommentUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A1AA21C15A80700DD6352 /* CommentUserCell.swift */; };
+		F47A1AB11C15A9EE00DD6352 /* DetailStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */; };
 		F47B72D41C11371000BBF494 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D31C11371000BBF494 /* UserInfoCell.swift */; };
 		F47B72D61C113C7C00BBF494 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D51C113C7C00BBF494 /* UserListController.swift */; };
 /* End PBXBuildFile section */
@@ -298,6 +300,8 @@
 		F43776361C15522700611600 /* PopAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimations.swift; sourceTree = "<group>"; };
 		F4689CB31C0DAB3000465BC8 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		F4689CE31C0DAB4400465BC8 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = pop/pop.xcodeproj; sourceTree = "<group>"; };
+		F47A1AA21C15A80700DD6352 /* CommentUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentUserCell.swift; sourceTree = "<group>"; };
+		F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailStatusController.swift; sourceTree = "<group>"; };
 		F47B72D31C11371000BBF494 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		F47B72D51C113C7C00BBF494 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,6 +342,7 @@
 				189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */,
 				187F2BC51C06DF3100BD96B4 /* PreviewPictureController.swift */,
 				F47B72D51C113C7C00BBF494 /* UserListController.swift */,
+				F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			children = (
 				180CE4BA1C06A42300242094 /* StatusCell.swift */,
 				F47B72D31C11371000BBF494 /* UserInfoCell.swift */,
+				F47A1AA21C15A80700DD6352 /* CommentUserCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -783,8 +789,10 @@
 				18349E271C02C08A009E4C95 /* DesignableImageView.swift in Sources */,
 				187F2BCA1C076FBD00BD96B4 /* NewStatusMenuViewController.swift in Sources */,
 				18349E291C02C08A009E4C95 /* DesignableTabBarController.swift in Sources */,
+				F47A1AA31C15A80700DD6352 /* CommentUserCell.swift in Sources */,
 				189AC23F1BFDB7F200BF5ACE /* MZNotificationCenter.swift in Sources */,
 				180CE4B51C06A33A00242094 /* Calculator.swift in Sources */,
+				F47A1AB11C15A9EE00DD6352 /* DetailStatusController.swift in Sources */,
 				18047EB61C089716006D1EFA /* EditorViewController.swift in Sources */,
 				18047EBE1C08AF61006D1EFA /* Data.swift in Sources */,
 				18349E3B1C02C08A009E4C95 /* SpringView.swift in Sources */,

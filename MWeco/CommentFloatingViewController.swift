@@ -19,6 +19,8 @@ class CommentFloatingViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     
     var alsoRetweet = false
+    
+    var commentViewBottomConstraint: NSLayoutConstraint?
 
     @IBAction func checkBoxPressed(sender: UIButton) {
         if alsoRetweet == false {
@@ -38,46 +40,58 @@ class CommentFloatingViewController: UIViewController {
         super.viewDidLoad()
         initUI()
         initObservers()
+        toggleKeyboard()
+    }
+    
+    func toggleKeyboard() {
+        commentTextField.becomeFirstResponder()
     }
     
     func initObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    // keyboard actions
-    func keyboardWillShow(notification: NSNotification) {
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-    }
-    
-    @IBAction func dismissButtonPressed(sender: UIButton) {
-        UIView.animateWithDuration(0.25, animations: {
-            [unowned self] in
-            self.commentView.frame.origin = CGPoint(x: 0, y: UIScreen.mainScreen().bounds.height)
-            }) {
-                complete in
-                if complete {
-                        self.dismissViewControllerAnimated(true, completion: {})
-                }
-        }
-        tbController?.showTabbar()
-    }
-    
-    @IBAction func sendButtonPressed(sender: SpringButton) {
-        guard let comment = commentTextField.text else {return}
-        if comment != "" && statusId != nil {
-            commentTextField.text = ""
-            NetWork.commentOnStatus(withId: statusId!, comment_ori: 0, comment: comment)
-        }
     }
     
     func initUI() {
         checkBox.layer.cornerRadius = checkBox.frame.width / 10
         checkBox.setImage(UIImage(named: ImageNames.tick_white), forState: .Normal)
         checkBox.tintColor = UIColor.whiteColor()
-        sendButton.layer.cornerRadius = sendButton.frame.height / 2
+        sendButton.layer.cornerRadius = sendButton.frame.height / 8
+        
+        commentViewBottomConstraint = NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: commentView, attribute: .Bottom, multiplier: 1, constant: 0)
+        view.addConstraint(commentViewBottomConstraint!)
     }
+    
+    // keyboard actions
+    func keyboardWillShow(notification: NSNotification) {
+        let keyboardFrame = view.convertRect((notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue(), fromView: nil)
+        UIView.animateWithDuration(0.25, animations: {
+            [unowned self] in
+            self.commentViewBottomConstraint!.constant = keyboardFrame.height
+        })
+    }
+    
+    @IBAction func dismissButtonPressed(sender: UIButton) {
+        view.endEditing(true)
+        bounceMove(commentView, destPoint: CGPoint(x: commentView.frame.midX, y: UIScreen.mainScreen().bounds.height - commentView.frame.height / 2))
+        NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "dismissSelf", userInfo: nil, repeats: false)
+    }
+    
+    @IBAction func sendButtonPressed(sender: SpringButton) {
+        guard let comment = commentTextField.text else {return}
+        if comment != "" && statusId != nil {
+            view.endEditing(true)
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+            commentTextField.text = ""
+            NetWork.commentOnStatus(withId: statusId!, comment_ori: 0, comment: comment)
+            dismissButtonPressed(sender)
+        } else {
+        }
+    }
+    
+    func dismissSelf() {
+        dismissViewControllerAnimated(true, completion: {})
+        self.tbController?.showTabbar()
+    }
+    
     
 }

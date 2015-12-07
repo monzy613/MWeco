@@ -27,6 +27,7 @@ class Constants {
 
 class StoryboardNames {
     static let userInfoCell = "UserInfoCell"
+    static let commentUserCell = "CommentUserCell"
 }
 
 //Segues
@@ -38,6 +39,7 @@ class Segues {
     static let Comment = "CommentSegue"
     static let following = "FollowingListSegue"
     static let follower = "FollowerListSegue"
+    static let detailStatus = "DetailStatusSegue"
 }
 
 

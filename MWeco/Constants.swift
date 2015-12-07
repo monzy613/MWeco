@@ -35,6 +35,7 @@ class Segues {
     static let NewStatus = "NewStatusSegue"
     static let Return = "ReturnSegue"
     static let Repost = "RepostSegue"
+    static let Comment = "CommentSegue"
     static let following = "FollowingListSegue"
     static let follower = "FollowerListSegue"
 }
@@ -55,6 +56,7 @@ class ImageNames {
     static let addIcon = "icon-add-no-circle"
     
     static let defaultAvatar = "guapi"
+    static let tick_white = "tick_white"
 }
 
 // tabbar item image names 

@@ -10,6 +10,7 @@ import UIKit
 
 protocol StatusCellDelegate {
     func repost(withSender sender: AnyObject)
+    func comment(withSender sender: AnyObject)
 }
 
 class StatusCell: UITableViewCell {
@@ -312,6 +313,7 @@ class StatusCell: UITableViewCell {
         
         //commentButton
         commentButton = SpringButton()
+        commentButton?.addTarget(self, action: "commentButtonPressed", forControlEvents: .TouchUpInside)
         commentButton?.setImage(UIImage(named: ImageNames.comment_unactive), forState: .Normal)
         commentButton?.setTitle("\(status.comments_count)", forState: .Normal)
         commentButton?.setTitleColor(UIColor.darkTextColor(), forState: .Normal)
@@ -351,6 +353,10 @@ class StatusCell: UITableViewCell {
     }
     
     func commentButtonPressed() {
+        commentButton!.animation = "pop"
+        commentButton?.animate()
+        delegate?.comment(withSender: self)
+        
     }
     
     

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import pop
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     var addButton: SpringButton?
+    var addButtonShowPoint: CGPoint?
+    var addButtonHidePoint: CGPoint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         addButton?.clipsToBounds = true
         addButton?.addTarget(self, action: "addButtonPressed", forControlEvents: .TouchUpInside)
         self.view.addSubview(addButton!)
+        addButtonShowPoint = CGPoint(x: (addButton?.frame.midX)!, y: (addButton?.frame.midY)!)
+        addButtonHidePoint = addButtonShowPoint
+        addButtonHidePoint?.y += (height + (UIScreen.mainScreen().bounds.height - (addButton?.frame.midY)! - height / 2))
     }
     
     func addButtonPressed() {
@@ -50,6 +56,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         performSegueWithIdentifier(Segues.StatusMenu, sender: self)
     }
     
+    
+    func hideTabbar() {
+        move(tabBar, destPoint: CGPoint(x: tabBar.frame.midX, y: tabBar.frame.midY + tabBar.frame.height))
+        move(addButton!, destPoint: addButtonHidePoint!)
+    }
+    
+    func showTabbar() {
+        move(tabBar, destPoint: CGPoint(x: tabBar.frame.midX, y: tabBar.frame.midY - tabBar.frame.height))
+        move(addButton!, destPoint: addButtonShowPoint!)
+    }
+
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         return true
     }

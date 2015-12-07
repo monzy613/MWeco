@@ -270,4 +270,20 @@ class NetWork {
             print(json)
         }
     }
+    
+    // Mark createComment
+    class func commentOnStatus(withId id: Int64, comment_ori: Int, comment: String) {
+        guard let access_token = SaveData.get(withKey: .ACCESS_TOKEN) else {return}
+        
+        Alamofire.request(.POST, BaseURL.commentCreate, parameters: ["access_token": access_token, "comment": comment, "comment_ori": NSNumber(integer: comment_ori), "id": NSNumber(longLong: id)]).responseJSON {
+            response in
+            let json = JSON(response.result.value ?? [])
+            if let error = json["error"].string {
+                print("error: \(error)")
+            } else {
+                print("commentOnStatus success")
+            }
+        }
+    }
+    
 }

@@ -129,8 +129,21 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     }
 
     
+    
+    // StatusCellDelegate
     func repost(withSender sender: AnyObject) {
         performSegueWithIdentifier(Segues.Repost, sender: sender)
+    }
+    
+    func comment(withSender sender: AnyObject) {
+        hideTabbar()
+        performSegueWithIdentifier(Segues.Comment, sender: sender)
+    }
+    
+    // hide tabBar
+    func hideTabbar() {
+        guard let myTabBarController = self.tabBarController as? TabBarController else {return}
+        myTabBarController.hideTabbar()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -140,6 +153,12 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
                 if let editorController = (segue.destinationViewController as? UINavigationController)?.visibleViewController as? EditorViewController {
                     editorController.retweetStatus = (sender as! StatusCell).status
                     editorController.hasRetweetStatus = true
+                }
+            case Segues.Comment:
+                if let tbController = self.tabBarController as? TabBarController {
+                    let commentViewController = segue.destinationViewController as! CommentFloatingViewController
+                    commentViewController.tbController = tbController
+                    commentViewController.statusId = (sender as! StatusCell).status.id
                 }
             default:
                 break

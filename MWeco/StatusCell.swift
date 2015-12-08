@@ -258,7 +258,7 @@ class StatusCell: UITableViewCell {
         }
         
         //button
-        let width = (UIScreen.mainScreen().bounds.width - 10 * 2 - 5 * 3) / 4
+        let width = (UIScreen.mainScreen().bounds.width - 10 * 2 - 5 * 3) / 5
         let topView = (
             status.hasPictures ?
                 (status.hasRetweet ?retweetView!:pictureView!):
@@ -267,15 +267,17 @@ class StatusCell: UITableViewCell {
         sourceLabel = UILabel()
         sourceLabel?.text = status.source
         sourceLabel?.font = UIFont(name: "AvenirNext-UltraLight", size: 10)
-        sourceLabel?.textAlignment = .Center
+        sourceLabel?.textAlignment = .Left
         sourceLabel?.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(sourceLabel!)
         contentView.addConstraints([
             NSLayoutConstraint(item: sourceLabel!, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 1, constant: ItemSize.ButtonHeight),
-            NSLayoutConstraint(item: sourceLabel!, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1, constant: width),
+            NSLayoutConstraint(item: sourceLabel!, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1, constant: width * 2),
             NSLayoutConstraint(item: sourceLabel!, attribute: .Left, relatedBy: .Equal, toItem: contentView, attribute: .Left, multiplier: 1, constant: 10),
             NSLayoutConstraint(item: sourceLabel!, attribute: .Top, relatedBy: .Equal, toItem: topView, attribute: .Bottom, multiplier: 1, constant: ItemSize.HalfSpace)
             ])
+        
+        
         
         //attitudeButton
         attitudeButton = SpringButton()

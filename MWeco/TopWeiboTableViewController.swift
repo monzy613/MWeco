@@ -16,6 +16,8 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     private var isLoadingMore = false
     private var isFirstLoad = true
     
+    let transitionManager = TransitionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentTabIndex = 0
@@ -179,6 +181,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
                 if let dest = segue.destinationViewController as? DetailImageViewController,
                 let detailImageInfo = sender as? DetailImageInfo,
                 let tbController = self.tabBarController as? TabBarController {
+                    dest.transitioningDelegate = transitionManager
                     dest.pic_urls = detailImageInfo.pic_urls
                     dest.index = detailImageInfo.index
                     dest.tbController = tbController

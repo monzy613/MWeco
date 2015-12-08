@@ -39,6 +39,7 @@ class DetailImageViewController: UIViewController {
         baseScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: scBounds.width, height: scBounds.height))
         baseScrollView?.backgroundColor = UIColor.clearColor()
         baseScrollView?.contentSize = CGSize(width: CGFloat(pic_urls.count) * scBounds.width, height: scBounds.height)
+        baseScrollView?.contentOffset = CGPoint(x: CGFloat(index) * scBounds.width, y: 0)
         baseScrollView?.showsHorizontalScrollIndicator = false
         baseScrollView?.showsVerticalScrollIndicator = false
         baseScrollView?.pagingEnabled = true

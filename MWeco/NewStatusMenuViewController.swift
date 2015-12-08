@@ -11,6 +11,7 @@ import CoreGraphics
 
 class NewStatusMenuViewController: UIViewController {
     
+    let animation = "zoomOut"
     
     @IBOutlet var textStatusButton: DesignableButton!
     @IBOutlet var imageVideoStatusButton: DesignableButton!
@@ -55,8 +56,12 @@ class NewStatusMenuViewController: UIViewController {
     // actions
     @IBAction func newTextStatus(sender: DesignableButton) {
         dismissButton.enabled = false
-        textStatusButton.animation = "pop"
+        textStatusButton.animation = animation
         textStatusButton.animate()
+        NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "textStatus", userInfo: nil, repeats: false)
+    }
+    
+    func textStatus() {
         performSegueWithIdentifier(Segues.NewStatus, sender: self)
     }
     

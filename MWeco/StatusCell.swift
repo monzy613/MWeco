@@ -11,6 +11,7 @@ import UIKit
 protocol StatusCellDelegate {
     func repost(withSender sender: AnyObject)
     func comment(withSender sender: AnyObject)
+    func detailImage(withSender sender: AnyObject)
 }
 
 class StatusCell: UITableViewCell {
@@ -134,6 +135,8 @@ class StatusCell: UITableViewCell {
                 let row = CGFloat(i / 3)//0 1 2
                 let column = CGFloat(i % 3)//0 1 2
                 let imageView = AsyncImageView()
+                imageView.rootCell = self
+                imageView.index = i
                 imageView.userInteractionEnabled = true
                 imageView.contentMode = .ScaleAspectFill
                 imageView.clipsToBounds = true
@@ -235,6 +238,8 @@ class StatusCell: UITableViewCell {
                     let row = CGFloat(i / 3)//0 1 2
                     let column = CGFloat(i % 3)//0 1 2
                     let imageView = AsyncImageView()
+                    imageView.rootCell = self
+                    imageView.index = i
                     imageView.userInteractionEnabled = true
                     imageView.contentMode = .ScaleAspectFit
                     imageView.setURL(status.retweeted_status!.pic_urls[i].thumbnailURL, placeholderImage: UIImage(named: "guapi"))

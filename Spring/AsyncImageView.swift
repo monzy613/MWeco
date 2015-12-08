@@ -25,6 +25,9 @@ import UIKit
 public class AsyncImageView: UIImageView {
 
     public var placeholderImage : UIImage?
+    
+    public weak var rootCell: UITableViewCell?
+    public var index: Int = 0
 
     public var url : NSURL? {
         didSet {

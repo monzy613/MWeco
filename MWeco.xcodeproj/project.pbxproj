@@ -81,6 +81,8 @@
 		F47A1AB11C15A9EE00DD6352 /* DetailStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */; };
 		F47B72D41C11371000BBF494 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D31C11371000BBF494 /* UserInfoCell.swift */; };
 		F47B72D61C113C7C00BBF494 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D51C113C7C00BBF494 /* UserListController.swift */; };
+		F4ED70551C165A1D00CBBFCF /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ED70541C165A1D00CBBFCF /* DetailImageViewController.swift */; };
+		F4ED70571C165D3000CBBFCF /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ED70561C165D3000CBBFCF /* SingleImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +306,8 @@
 		F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailStatusController.swift; sourceTree = "<group>"; };
 		F47B72D31C11371000BBF494 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		F47B72D51C113C7C00BBF494 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
+		F4ED70541C165A1D00CBBFCF /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
+		F4ED70561C165D3000CBBFCF /* SingleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +333,8 @@
 		18047EC11C08C43B006D1EFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4ED70541C165A1D00CBBFCF /* DetailImageViewController.swift */,
+				F4ED70561C165D3000CBBFCF /* SingleImageView.swift */,
 				F43776341C1535A300611600 /* CommentFloatingViewController.swift */,
 				187F2BBD1C06DCFF00BD96B4 /* Extensions.swift */,
 				18047EB51C089716006D1EFA /* EditorViewController.swift */,
@@ -465,10 +471,10 @@
 				F43776361C15522700611600 /* PopAnimations.swift */,
 				184ECFF41BFEE087001B05B2 /* Cell */,
 				18047EC11C08C43B006D1EFA /* Controllers */,
+				F4ED70471C1659F100CBBFCF /* Test */,
 				18F8B9EF1BFD5773003865E0 /* Main.storyboard */,
 				18F8B9F71BFD5773003865E0 /* LaunchScreen.storyboard */,
 				18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */,
-				186224D91C03262F0030D2D6 /* TestViewController.swift */,
 				F43776251C15299000611600 /* CommentFloatView.playground */,
 				189AC2161BFD737500BF5ACE /* MyPlayground.playground */,
 				18F8B9F51BFD5773003865E0 /* Assets.xcassets */,
@@ -521,6 +527,14 @@
 				F4689CFA1C0DAB4400465BC8 /* pop-tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F4ED70471C1659F100CBBFCF /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				186224D91C03262F0030D2D6 /* TestViewController.swift */,
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -754,6 +768,7 @@
 				18349E371C02C08A009E4C95 /* SpringImageView.swift in Sources */,
 				18DB1E991C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */,
+				F4ED70571C165D3000CBBFCF /* SingleImageView.swift in Sources */,
 				18349E2C1C02C08A009E4C95 /* DesignableView.swift in Sources */,
 				18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */,
 				189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */,
@@ -776,6 +791,7 @@
 				186224D01C02EACA0030D2D6 /* SettingTableViewController.swift in Sources */,
 				18349E321C02C08A009E4C95 /* Misc.swift in Sources */,
 				189AC2361BFD9B2700BF5ACE /* SwiftyJSON.swift in Sources */,
+				F4ED70551C165A1D00CBBFCF /* DetailImageViewController.swift in Sources */,
 				18349E261C02C08A009E4C95 /* DesignableButton.swift in Sources */,
 				18349E241C02C08A009E4C95 /* AutoTextView.swift in Sources */,
 				18349E221C02C08A009E4C95 /* AsyncButton.swift in Sources */,

@@ -122,7 +122,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
         if selectedCell.retweetView != nil {
             (selectedCell.retweetView!).backgroundColor = Colors.retweetBackgroundColor
         }
-        performSegueWithIdentifier(Segues.detailStatus, sender: publicStatuses[indexPath.row])
+        performSegueWithIdentifier(Segues.detailStatus, sender: indexPath)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -137,8 +137,13 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     }
     
     func comment(withSender sender: AnyObject) {
-        hideTabbar()
         performSegueWithIdentifier(Segues.Comment, sender: sender)
+    }
+    
+    func detailImage(withSender sender: AnyObject) {
+        print("the \((sender as! DetailImageInfo).index) picture pressed")
+        hideTabbar()
+        performSegueWithIdentifier(Segues.detailImage, sender: sender)
     }
     
     // hide tabBar
@@ -156,20 +161,27 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
                     editorController.hasRetweetStatus = true
                 }
             case Segues.Comment:
-                if let tbController = self.tabBarController as? TabBarController {
-                    let commentViewController = segue.destinationViewController as! CommentFloatingViewController
-                    commentViewController.tbController = tbController
-                    commentViewController.statusId = (sender as! StatusCell).status.id
-                }
+                let commentViewController = segue.destinationViewController as! CommentFloatingViewController
+                commentViewController.statusId = (sender as! StatusCell).status.id
             case Segues.detailStatus:
                 print("performSegue: DetailStatusSegue")
                 if let dest = segue.destinationViewController as? DetailStatusController, let tbController = self.tabBarController as? TabBarController {
                     tbController.hideTabbar()
+                    let indexPath = sender as! NSIndexPath
                     dest.tbController = tbController
-                    NetWork.getComments(byStatusID: (sender as! Status).id!, onSuccess: {
+                    dest.statusCell = StatusCell(withStatus: publicStatuses[indexPath.row], style: .Default, reuseIdentifier: "StatusCell")
+                    NetWork.getComments(byStatusID: publicStatuses[indexPath.row].id!, onSuccess: {
                         comments in
                         dest.comments = comments
                     })
+                }
+            case Segues.detailImage:
+                if let dest = segue.destinationViewController as? DetailImageViewController,
+                let detailImageInfo = sender as? DetailImageInfo,
+                let tbController = self.tabBarController as? TabBarController {
+                    dest.pic_urls = detailImageInfo.pic_urls
+                    dest.index = detailImageInfo.index
+                    dest.tbController = tbController
                 }
             default:
                 break

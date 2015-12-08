@@ -10,7 +10,6 @@ import UIKit
 
 class CommentFloatingViewController: UIViewController {
     
-    var tbController: TabBarController?
     var statusId: Int64?
     @IBOutlet weak var commentView: SpringView!
     @IBOutlet weak var dismissButton: UIButton!
@@ -90,7 +89,6 @@ class CommentFloatingViewController: UIViewController {
     
     func dismissSelf() {
         dismissViewControllerAnimated(true, completion: {})
-        self.tbController?.showTabbar()
     }
     
     

@@ -10,8 +10,8 @@ import UIKit
 
 class DetailStatusController: UITableViewController {
     
-    var status: Status?
     var tbController: TabBarController?
+    var statusCell: StatusCell?
     
     var comments = [Comment]() {
         didSet {
@@ -31,9 +31,22 @@ class DetailStatusController: UITableViewController {
     }
     
     func initUI() {
+        let screenBounds = UIScreen.mainScreen().bounds
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
+        
+        //init headerView
+        statusCell?.attitudeButton?.removeFromSuperview()
+        statusCell?.repostButton?.removeFromSuperview()
+        statusCell?.commentButton?.removeFromSuperview()
+        let headCellHeight = Calculator.statusCellHeight(withStatus: statusCell!.status, andScreenWidth: screenBounds.width)
+        let lineHeight: CGFloat = 0.35
+        let line = UIView(frame: CGRect(x: 0, y: headCellHeight - lineHeight, width: screenBounds.width, height: lineHeight))
+        line.backgroundColor = UIColor.lightGrayColor()
+        statusCell?.contentView.addSubview(line)
+        statusCell?.frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: headCellHeight)
+        tableView.tableHeaderView = statusCell
     }
 
 

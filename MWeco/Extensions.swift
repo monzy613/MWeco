@@ -44,6 +44,16 @@ extension TopWeiboTableViewController: UIViewControllerPreviewingDelegate {
     }
 }
 
+class DetailImageInfo: AnyObject {
+    var index: Int = 0
+    var pic_urls = [PictureURL]()
+    
+    init(withIndex index: Int, andPics pics: [PictureURL]) {
+        self.index = index
+        self.pic_urls = pics
+    }
+}
+
 extension AsyncImageView {
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if self.tag != 0 {
@@ -70,9 +80,18 @@ extension AsyncImageView {
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationNames.EndTouchImageView, object: nil)
+        if let statusCell = rootCell as? StatusCell {
+            if let retweetStatus = statusCell.status.retweeted_status {
+                statusCell.delegate?.detailImage(withSender: DetailImageInfo(withIndex: index, andPics: retweetStatus.pic_urls))
+            } else {
+                statusCell.delegate?.detailImage(withSender: DetailImageInfo(withIndex: index, andPics: statusCell.status.pic_urls))
+            }
+        }
+        print("touchesEnded")
     }
     
     public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationNames.EndTouchImageView, object: nil)
+        print("touchesCancelled")
     }
 }

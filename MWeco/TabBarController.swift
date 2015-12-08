@@ -63,12 +63,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     
     func hideTabbar() {
-        move(tabBar, destPoint: CGPoint(x: tabBar.frame.midX, y: tabBar.frame.midY + tabBar.frame.height))
+        move(tabBar, destPoint: CGPoint(x: tabBar.frame.midX, y: UIScreen.mainScreen().bounds.height + tabBar.frame.height / 2))
         move(addButton!, destPoint: addButtonHidePoint!)
     }
     
     func showTabbar() {
-        move(tabBar, destPoint: CGPoint(x: tabBar.frame.midX, y: tabBar.frame.midY - tabBar.frame.height))
+        move(tabBar, destPoint: CGPoint(x: tabBar.frame.midX, y: UIScreen.mainScreen().bounds.height - tabBar.frame.height / 2))
         move(addButton!, destPoint: addButtonShowPoint!)
     }
 

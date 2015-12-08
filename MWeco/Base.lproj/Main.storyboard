@@ -41,6 +41,7 @@
                         <segue destination="1Yh-hb-5j1" kind="presentation" identifier="RepostSegue" modalTransitionStyle="coverVertical" id="sCd-x4-I3e"/>
                         <segue destination="O82-n1-cMW" kind="presentation" identifier="CommentSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="n2N-st-fnT"/>
                         <segue destination="Msb-Mp-iQK" kind="show" identifier="DetailStatusSegue" id="He5-VS-Fb3"/>
+                        <segue destination="DKa-FA-H7p" kind="presentation" identifier="DetailImageSegue" modalPresentationStyle="overCurrentContext" id="PsS-5h-KKo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wb1-Fq-hBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -657,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QzW-9Z-ufv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="1124"/>
+            <point key="canvasLocation" x="1042" y="1124"/>
         </scene>
         <!--Detail Status Controller-->
         <scene sceneID="oQS-wL-P3E">
@@ -744,7 +745,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jwd-dg-6EM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="598"/>
+            <point key="canvasLocation" x="1464" y="1124"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="yXQ-8n-qkT">
@@ -892,7 +893,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gij-lj-W8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GPc-dD-yZk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="1714"/>
+            <point key="canvasLocation" x="1549" y="1760"/>
+        </scene>
+        <!--Detail Image View Controller-->
+        <scene sceneID="aWe-ae-pRg">
+            <objects>
+                <viewController id="DKa-FA-H7p" customClass="DetailImageViewController" customModule="MWeco" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P24-9V-eit"/>
+                        <viewControllerLayoutGuide type="bottom" id="pYX-aH-LWc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W7j-vJ-VEv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MpT-7g-ckz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ePJ-BZ-KjY">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="MpT-7g-ckz" firstAttribute="width" secondItem="W7j-vJ-VEv" secondAttribute="width" id="fxp-Zx-2YI"/>
+                            <constraint firstItem="MpT-7g-ckz" firstAttribute="centerY" secondItem="W7j-vJ-VEv" secondAttribute="centerY" id="lhi-KU-OL4"/>
+                            <constraint firstItem="MpT-7g-ckz" firstAttribute="height" secondItem="W7j-vJ-VEv" secondAttribute="height" id="n2D-XY-Scf"/>
+                            <constraint firstItem="MpT-7g-ckz" firstAttribute="centerX" secondItem="W7j-vJ-VEv" secondAttribute="centerX" id="uYs-qP-emV"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="agB-Ch-Prn" appends="YES" id="qH1-d8-VbP"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBb-8Q-UTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="agB-Ch-Prn">
+                    <connections>
+                        <action selector="panGestoreAction:" destination="DKa-FA-H7p" id="JKD-tn-YEM"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="929" y="434"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="crc-cd-Kq1">
@@ -942,7 +987,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vxa-Rb-0Gi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="1824"/>
+            <point key="canvasLocation" x="1084" y="1760"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nZC-yL-6Dm">
@@ -1646,32 +1691,6 @@
             </objects>
             <point key="canvasLocation" x="40.5" y="3952.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ABb-bS-vUj">
-            <objects>
-                <viewController id="JOL-gD-rNi" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7XR-1t-EZY"/>
-                        <viewControllerLayoutGuide type="bottom" id="qZc-g4-J4A"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ggk-AF-xmH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="repost-background" translatesAutoresizingMaskIntoConstraints="NO" id="KUY-jP-IUL">
-                                <rect key="frame" x="204" y="236" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="repost-background" translatesAutoresizingMaskIntoConstraints="NO" id="mHG-5B-t9a">
-                                <rect key="frame" x="128" y="-66" width="38" height="326"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v7b-bu-7Yr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="497" y="3277"/>
-        </scene>
         <!--发现-->
         <scene sceneID="GRp-gC-aRa">
             <objects>
@@ -1772,7 +1791,6 @@
         <image name="newStatus-picture" width="400" height="400"/>
         <image name="newStatus-signin" width="400" height="400"/>
         <image name="newStatus-text" width="400" height="400"/>
-        <image name="repost-background" width="12" height="310"/>
         <image name="repost-unactive" width="20" height="21"/>
         <image name="setting_24px" width="24" height="24"/>
         <image name="tabbar-home-selected" width="32" height="26"/>
@@ -1786,6 +1804,6 @@
         <segue reference="CEH-oo-5b6"/>
         <segue reference="nwF-ua-teA"/>
         <segue reference="sCd-x4-I3e"/>
-        <segue reference="uhg-IN-dJM"/>
+        <segue reference="6RZ-sX-oKV"/>
     </inferredMetricsTieBreakers>
 </document>

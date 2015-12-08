@@ -20,7 +20,7 @@ enum TimeLineType {
 }
 
 class Constants {
-    static let InitStatusesAmount = 25
+    static let InitStatusesAmount = 10
     static let userInfoStatuses = 20
     static let newStatusPlaceholder = "分享新鲜事..."
 }
@@ -40,6 +40,7 @@ class Segues {
     static let following = "FollowingListSegue"
     static let follower = "FollowerListSegue"
     static let detailStatus = "DetailStatusSegue"
+    static let detailImage = "DetailImageSegue"
 }
 
 

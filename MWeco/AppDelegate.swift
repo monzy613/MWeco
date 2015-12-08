@@ -8,12 +8,25 @@
 
 import UIKit
 import CoreData
+import CoreMotion
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var notificationCenter: MZNotificationCenter?
+    var motionManager = CMMotionManager()
+    static let motionManager = CMMotionManager()
+    
+/*
+    - (CMMotionManager *)motionManager {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+    _motionManager = [[CMMotionManager alloc] init];
+    });
+    return _motionManager;
+    }
+    */
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

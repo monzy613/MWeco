@@ -60,6 +60,9 @@ class ImageNames {
     
     static let defaultAvatar = "guapi"
     static let tick_white = "tick_white"
+    
+    static let gsNormal = "gravityscroll-normal"
+    static let gsUpsideDown = "gravityscroll-upsideDown"
 }
 
 // tabbar item image names 

@@ -31,12 +31,20 @@
                             <outlet property="delegate" destination="q9d-aZ-DxD" id="DeO-kK-Lgg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="R96-2u-Ck8"/>
+                    <navigationItem key="navigationItem" id="R96-2u-Ck8">
+                        <barButtonItem key="rightBarButtonItem" image="gravityscroll-normal" id="bPT-iw-8b5">
+                            <connections>
+                                <action selector="changeGravityScrollDirection:" destination="q9d-aZ-DxD" id="M05-Ra-bxH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="QqJ-3B-5Tt">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="gravityDirectionButton" destination="bPT-iw-8b5" id="pSc-IE-IUa"/>
+                        <outlet property="longPressGesture" destination="IgQ-Xp-qiN" id="sfa-bH-yKt"/>
                         <segue destination="ox8-k1-kKx" kind="presentation" identifier="LoginSegue" id="6RZ-sX-oKV"/>
                         <segue destination="1Yh-hb-5j1" kind="presentation" identifier="RepostSegue" modalTransitionStyle="coverVertical" id="sCd-x4-I3e"/>
                         <segue destination="O82-n1-cMW" kind="presentation" identifier="CommentSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="n2N-st-fnT"/>
@@ -45,6 +53,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wb1-Fq-hBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="IgQ-Xp-qiN">
+                    <connections>
+                        <action selector="longPressGestureTriggered:" destination="q9d-aZ-DxD" id="f8D-iP-2fT"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="606" y="1124"/>
         </scene>
@@ -1780,6 +1793,7 @@
         <image name="back-tri" width="15" height="24"/>
         <image name="comment-unactive" width="20" height="20"/>
         <image name="cross" width="25" height="25"/>
+        <image name="gravityscroll-normal" width="27" height="24"/>
         <image name="guapi" width="440" height="439"/>
         <image name="icon-@" width="24" height="24"/>
         <image name="icon-add" width="26" height="26"/>
@@ -1802,8 +1816,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Aza-w7-WIp"/>
-        <segue reference="CEH-oo-5b6"/>
-        <segue reference="XH6-ge-gpY"/>
+        <segue reference="6RZ-sX-oKV"/>
         <segue reference="sCd-x4-I3e"/>
+        <segue reference="CEH-oo-5b6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,9 +7,25 @@
 //
 
 import UIKit
+import CoreMotion
 
-class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
+class TopWeiboTableViewController: UITableViewController, StatusCellDelegate, UIGestureRecognizerDelegate {
     
+    
+    @IBOutlet weak var gravityDirectionButton: UIBarButtonItem!
+    @IBAction func changeGravityScrollDirection(sender: UIBarButtonItem) {
+        print("changeGravityScrollDirection")
+        if currentGDirection == .Normal {
+            currentGDirection = .UpsideDown
+            gravityDirectionButton.image = UIImage(named: ImageNames.gsUpsideDown)
+        } else {
+            currentGDirection = .Normal
+            gravityDirectionButton.image = UIImage(named: ImageNames.gsNormal)
+        }
+        GravityScroller.direction = currentGDirection
+    }
+    
+    private var currentGDirection = GravityScroller.Direction.Normal
     private var loadingView: MZLoadingView?
     private var loadingMoreView: UIView?
     private var loadingMoreActivator: UIActivityIndicatorView?
@@ -17,6 +33,15 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     private var isFirstLoad = true
     
     let transitionManager = TransitionManager()
+    
+    // long press gesture
+    @IBOutlet var longPressGesture: UILongPressGestureRecognizer!
+    
+    @IBAction func longPressGestureTriggered(sender: UILongPressGestureRecognizer) {
+        print("longPressGestureTriggered")
+        MZToastView().configure((self.tabBarController?.view)!, content: "重力刷微博开启啦", position: .Middle, length: .Short, lightMode: .Light).show()
+        GravityScroller.restart()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +51,27 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
         if publicStatuses.count == 0 {
             loadStatus()
         }
-        
         self.refreshControl?.addTarget(self, action: "loadStatus", forControlEvents: .ValueChanged)
+    }
+    
+    private func initAutoScrolling() {
+        GravityScroller.initAccelerometer(withTableView: tableView, andMotionManager: AppDelegate.motionManager, withDirection: currentGDirection)
+        GravityScroller.start(onTop: {}, onBottom: {
+            [unowned self] in
+            self.loadMore()
+        })
+        GravityScroller.bottomOffsetMaxHeight = loadingMoreView?.frame.height ?? 0
     }
     
     private func initUI() {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        //init long press gesture
+        longPressGesture.minimumPressDuration = 0.6
+        longPressGesture.delegate = self
+        tableView.addGestureRecognizer(longPressGesture)
         
         let width = UIScreen.mainScreen().bounds.width
         let height = width * 0.5
@@ -67,6 +106,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
                     }, onFailure: {})
                 publicStatuses = (status + publicStatuses)
                 self.tableView.reloadData()
+                self.initAutoScrolling()
                 if self.refreshControl?.refreshing == true {
                     self.refreshControl?.endRefreshing()
                 }
@@ -119,6 +159,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        GravityScroller.pause()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! StatusCell
         if selectedCell.retweetView != nil {
@@ -196,24 +237,39 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate {
     //load more
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if (isLoadingMore == false) && scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) {
-            print("load more")
-            loadingMoreActivator?.startAnimating()
-            isLoadingMore = true
-            if publicStatuses.count == 0 {return}
-            var max_id = (publicStatuses[publicStatuses.count - 1].id ?? 0)
-            if max_id > 0 {
-                max_id -= 1
-            }
-            NetWork.getTimeLine(.FriendTimeLine, since_id: 0, max_id: max_id, onSuccess: {
-                [unowned self] statuses in
-                publicStatuses += statuses
-                self.tableView.reloadData()
-                self.isLoadingMore = false
-                print("current timeline count: \(publicStatuses.count)")
-                self.loadingMoreActivator?.stopAnimating()
-                }, onFailure: {
-            })
+            loadMore()
         }
     }
     
+    
+//    var offsetBeforeLoadMore: CGPoint = CGPoint.zero
+    
+    func loadMore() {
+        if isLoadingMore == true {
+            return
+        }
+        //offsetBeforeLoadMore = tableView.contentOffset
+        print("load more")
+        loadingMoreActivator?.startAnimating()
+        isLoadingMore = true
+        if publicStatuses.count == 0 {return}
+        var max_id = (publicStatuses[publicStatuses.count - 1].id ?? 0)
+        if max_id > 0 {
+            max_id -= 1
+        }
+        NetWork.getTimeLine(.FriendTimeLine, since_id: 0, max_id: max_id, onSuccess: {
+            [unowned self] statuses in
+            publicStatuses += statuses
+            self.isLoadingMore = false
+            print("current timeline count: \(publicStatuses.count)")
+            self.loadingMoreActivator?.stopAnimating()
+            self.tableView.reloadData()
+            //self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
+            }, onFailure: {
+        })
+    }
+    
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        GravityScroller.pause()
+    }
 }

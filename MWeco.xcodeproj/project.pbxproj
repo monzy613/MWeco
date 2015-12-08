@@ -71,6 +71,8 @@
 		18F8B9F61BFD5773003865E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B9F51BFD5773003865E0 /* Assets.xcassets */; };
 		18F8B9F91BFD5773003865E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B9F71BFD5773003865E0 /* LaunchScreen.storyboard */; };
 		18F8BA041BFD5773003865E0 /* MWecoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8BA031BFD5773003865E0 /* MWecoUITests.swift */; };
+		F40749231C17209F00DE7E6E /* GravityScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40749221C17209F00DE7E6E /* GravityScroller.swift */; };
+		F40749311C17327700DE7E6E /* MZToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40749301C17327700DE7E6E /* MZToastView.swift */; };
 		F43776351C1535A300611600 /* CommentFloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43776341C1535A300611600 /* CommentFloatingViewController.swift */; };
 		F43776371C15522700611600 /* PopAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43776361C15522700611600 /* PopAnimations.swift */; };
 		F4689CFB1C0DAB7400465BC8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CBE1C0DAB3000465BC8 /* Alamofire.framework */; };
@@ -297,6 +299,8 @@
 		18F8B9FF1BFD5773003865E0 /* MWecoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWecoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8BA031BFD5773003865E0 /* MWecoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWecoUITests.swift; sourceTree = "<group>"; };
 		18F8BA051BFD5773003865E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F40749221C17209F00DE7E6E /* GravityScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityScroller.swift; sourceTree = "<group>"; };
+		F40749301C17327700DE7E6E /* MZToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZToastView.swift; sourceTree = "<group>"; };
 		F43776251C15299000611600 /* CommentFloatView.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CommentFloatView.playground; sourceTree = "<group>"; };
 		F43776341C1535A300611600 /* CommentFloatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentFloatingViewController.swift; sourceTree = "<group>"; };
 		F43776361C15522700611600 /* PopAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimations.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 		189AC22F1BFD983200BF5ACE /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				F40749301C17327700DE7E6E /* MZToastView.swift */,
+				F40749221C17209F00DE7E6E /* GravityScroller.swift */,
 				18DB1E8D1C0B0E1300F0D122 /* TPKeyboardAvoiding */,
 				18349E031C02C089009E4C95 /* Spring */,
 				189AC2141BFD728C00BF5ACE /* AuthenticationSetter.swift */,
@@ -773,6 +779,7 @@
 				18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */,
 				189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */,
 				187F2BC81C07632200BD96B4 /* TabBarController.swift in Sources */,
+				F40749311C17327700DE7E6E /* MZToastView.swift in Sources */,
 				189AC2381BFDA2A800BF5ACE /* NetWork.swift in Sources */,
 				18DB1E971C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				18349E3D1C02C08A009E4C95 /* TransitionZoom.swift in Sources */,
@@ -814,6 +821,7 @@
 				18349E3B1C02C08A009E4C95 /* SpringView.swift in Sources */,
 				18349E281C02C08A009E4C95 /* DesignableLabel.swift in Sources */,
 				18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */,
+				F40749231C17209F00DE7E6E /* GravityScroller.swift in Sources */,
 				18349E361C02C08A009E4C95 /* SpringButton.swift in Sources */,
 				18349E351C02C08A009E4C95 /* SpringAnimation.swift in Sources */,
 				187F2BC61C06DF3100BD96B4 /* PreviewPictureController.swift in Sources */,
@@ -963,10 +971,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MWeco/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MWeco/libWeiboSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monzy.Zhang.MWeco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -984,10 +989,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MWeco/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MWeco/libWeiboSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monzy.Zhang.MWeco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

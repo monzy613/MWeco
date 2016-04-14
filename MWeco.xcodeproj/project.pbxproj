@@ -57,7 +57,6 @@
 		189AC23F1BFDB7F200BF5ACE /* MZNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC23E1BFDB7F200BF5ACE /* MZNotificationCenter.swift */; };
 		189AC2411BFDC14300BF5ACE /* TopWeiboTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2401BFDC14300BF5ACE /* TopWeiboTableViewController.swift */; };
 		189AC2431BFDC16800BF5ACE /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */; };
-		189AC2451BFDC18B00BF5ACE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */; };
 		189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */; };
 		18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9D3A81BFF235C00FC714E /* Weibo.swift */; };
 		18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */; };
@@ -73,8 +72,18 @@
 		18F8BA041BFD5773003865E0 /* MWecoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8BA031BFD5773003865E0 /* MWecoUITests.swift */; };
 		F40749231C17209F00DE7E6E /* GravityScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40749221C17209F00DE7E6E /* GravityScroller.swift */; };
 		F40749311C17327700DE7E6E /* MZToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40749301C17327700DE7E6E /* MZToastView.swift */; };
+		F42C4C481CB8AF6900E555A0 /* DBFMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42C4C471CB8AF6900E555A0 /* DBFMViewController.swift */; };
 		F43776351C1535A300611600 /* CommentFloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43776341C1535A300611600 /* CommentFloatingViewController.swift */; };
 		F43776371C15522700611600 /* PopAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43776361C15522700611600 /* PopAnimations.swift */; };
+		F44311021CBF3D780082C89F /* FMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44311011CBF3D780082C89F /* FMLoginViewController.swift */; };
+		F44311051CBF3DB00082C89F /* FMNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44311041CBF3DB00082C89F /* FMNetwork.swift */; };
+		F44311071CBF3DB60082C89F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44311061CBF3DB60082C89F /* Player.swift */; };
+		F44311091CBF3DE10082C89F /* UIImage+Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44311081CBF3DE10082C89F /* UIImage+Downloader.swift */; };
+		F443110B1CBF3DE70082C89F /* MZButtonProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443110A1CBF3DE70082C89F /* MZButtonProgressView.swift */; };
+		F443110D1CBF3DF10082C89F /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443110C1CBF3DF10082C89F /* FileManager.swift */; };
+		F44311101CBF3DFB0082C89F /* DBChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443110E1CBF3DFB0082C89F /* DBChannel.swift */; };
+		F44311111CBF3DFB0082C89F /* DBSongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443110F1CBF3DFB0082C89F /* DBSongList.swift */; };
+		F44311651CBF41E60082C89F /* DetectFaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44311641CBF41E60082C89F /* DetectFaceViewController.swift */; };
 		F4689CFB1C0DAB7400465BC8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CBE1C0DAB3000465BC8 /* Alamofire.framework */; };
 		F4689CFC1C0DAB7400465BC8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CBE1C0DAB3000465BC8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4689CFF1C0DAB7400465BC8 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4689CF01C0DAB4400465BC8 /* pop.framework */; };
@@ -83,6 +92,9 @@
 		F47A1AB11C15A9EE00DD6352 /* DetailStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */; };
 		F47B72D41C11371000BBF494 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D31C11371000BBF494 /* UserInfoCell.swift */; };
 		F47B72D61C113C7C00BBF494 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B72D51C113C7C00BBF494 /* UserListController.swift */; };
+		F4DBB9241CBFE78600474ECC /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBB9231CBFE78600474ECC /* SWXMLHash.swift */; };
+		F4DBB9331CBFE7BB00474ECC /* MZWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBB9311CBFE7BB00474ECC /* MZWeatherModel.swift */; };
+		F4DBB9341CBFE7BB00474ECC /* MZWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBB9321CBFE7BB00474ECC /* MZWeatherView.swift */; };
 		F4ED70551C165A1D00CBBFCF /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ED70541C165A1D00CBBFCF /* DetailImageViewController.swift */; };
 		F4ED70571C165D3000CBBFCF /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ED70561C165D3000CBBFCF /* SingleImageView.swift */; };
 /* End PBXBuildFile section */
@@ -277,7 +289,6 @@
 		189AC23E1BFDB7F200BF5ACE /* MZNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZNotificationCenter.swift; sourceTree = "<group>"; };
 		189AC2401BFDC14300BF5ACE /* TopWeiboTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopWeiboTableViewController.swift; sourceTree = "<group>"; };
 		189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
-		189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTableViewController.swift; sourceTree = "<group>"; };
 		18C9D3A81BFF235C00FC714E /* Weibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weibo.swift; sourceTree = "<group>"; };
 		18D5B9AA1C037BBE006AD9DC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -301,15 +312,28 @@
 		18F8BA051BFD5773003865E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F40749221C17209F00DE7E6E /* GravityScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityScroller.swift; sourceTree = "<group>"; };
 		F40749301C17327700DE7E6E /* MZToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZToastView.swift; sourceTree = "<group>"; };
+		F42C4C471CB8AF6900E555A0 /* DBFMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBFMViewController.swift; sourceTree = "<group>"; };
 		F43776251C15299000611600 /* CommentFloatView.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CommentFloatView.playground; sourceTree = "<group>"; };
 		F43776341C1535A300611600 /* CommentFloatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentFloatingViewController.swift; sourceTree = "<group>"; };
 		F43776361C15522700611600 /* PopAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimations.swift; sourceTree = "<group>"; };
+		F44311011CBF3D780082C89F /* FMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMLoginViewController.swift; sourceTree = "<group>"; };
+		F44311041CBF3DB00082C89F /* FMNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMNetwork.swift; sourceTree = "<group>"; };
+		F44311061CBF3DB60082C89F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F44311081CBF3DE10082C89F /* UIImage+Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Downloader.swift"; sourceTree = "<group>"; };
+		F443110A1CBF3DE70082C89F /* MZButtonProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZButtonProgressView.swift; sourceTree = "<group>"; };
+		F443110C1CBF3DF10082C89F /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		F443110E1CBF3DFB0082C89F /* DBChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBChannel.swift; sourceTree = "<group>"; };
+		F443110F1CBF3DFB0082C89F /* DBSongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSongList.swift; sourceTree = "<group>"; };
+		F44311641CBF41E60082C89F /* DetectFaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectFaceViewController.swift; sourceTree = "<group>"; };
 		F4689CB31C0DAB3000465BC8 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		F4689CE31C0DAB4400465BC8 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = pop/pop.xcodeproj; sourceTree = "<group>"; };
 		F47A1AA21C15A80700DD6352 /* CommentUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentUserCell.swift; sourceTree = "<group>"; };
 		F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailStatusController.swift; sourceTree = "<group>"; };
 		F47B72D31C11371000BBF494 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		F47B72D51C113C7C00BBF494 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
+		F4DBB9231CBFE78600474ECC /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
+		F4DBB9311CBFE7BB00474ECC /* MZWeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZWeatherModel.swift; sourceTree = "<group>"; };
+		F4DBB9321CBFE7BB00474ECC /* MZWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZWeatherView.swift; sourceTree = "<group>"; };
 		F4ED70541C165A1D00CBBFCF /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		F4ED70561C165D3000CBBFCF /* SingleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,6 +361,7 @@
 		18047EC11C08C43B006D1EFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F44311011CBF3D780082C89F /* FMLoginViewController.swift */,
 				F4ED70541C165A1D00CBBFCF /* DetailImageViewController.swift */,
 				F4ED70561C165D3000CBBFCF /* SingleImageView.swift */,
 				F43776341C1535A300611600 /* CommentFloatingViewController.swift */,
@@ -346,13 +371,13 @@
 				187F2BC91C076FBD00BD96B4 /* NewStatusMenuViewController.swift */,
 				189AC2401BFDC14300BF5ACE /* TopWeiboTableViewController.swift */,
 				189AC2421BFDC16800BF5ACE /* NotificationTableViewController.swift */,
-				189AC2441BFDC18B00BF5ACE /* SearchViewController.swift */,
 				189AC2461BFDC1FA00BF5ACE /* SelfTableViewController.swift */,
 				186224CF1C02EACA0030D2D6 /* SettingTableViewController.swift */,
 				189AC2121BFD6E7800BF5ACE /* OauthViewController.swift */,
 				187F2BC51C06DF3100BD96B4 /* PreviewPictureController.swift */,
 				F47B72D51C113C7C00BBF494 /* UserListController.swift */,
 				F47A1AB01C15A9EE00DD6352 /* DetailStatusController.swift */,
+				F42C4C471CB8AF6900E555A0 /* DBFMViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -407,6 +432,9 @@
 		189AC22F1BFD983200BF5ACE /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				F4DBB9311CBFE7BB00474ECC /* MZWeatherModel.swift */,
+				F4DBB9321CBFE7BB00474ECC /* MZWeatherView.swift */,
+				F4DBB9231CBFE78600474ECC /* SWXMLHash.swift */,
 				F40749301C17327700DE7E6E /* MZToastView.swift */,
 				F40749221C17209F00DE7E6E /* GravityScroller.swift */,
 				18DB1E8D1C0B0E1300F0D122 /* TPKeyboardAvoiding */,
@@ -421,19 +449,16 @@
 			name = ThirdParties;
 			sourceTree = "<group>";
 		};
-		189AC2391BFDA44F00BF5ACE /* Data */ = {
+		189AC2391BFDA44F00BF5ACE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				180CE4B81C06A35600242094 /* Constants.swift */,
-				180CE4B41C06A33A00242094 /* Calculator.swift */,
-				189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */,
-				189AC2371BFDA2A800BF5ACE /* NetWork.swift */,
-				189AC23E1BFDB7F200BF5ACE /* MZNotificationCenter.swift */,
+				F443110E1CBF3DFB0082C89F /* DBChannel.swift */,
+				F443110F1CBF3DFB0082C89F /* DBSongList.swift */,
 				189AC23A1BFDA48300BF5ACE /* SaveData.swift */,
 				18C9D3A81BFF235C00FC714E /* Weibo.swift */,
 				18047EBD1C08AF61006D1EFA /* Data.swift */,
 			);
-			name = Data;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		18DB1E8D1C0B0E1300F0D122 /* TPKeyboardAvoiding */ = {
@@ -473,12 +498,15 @@
 		18F8B9EA1BFD5773003865E0 /* MWeco */ = {
 			isa = PBXGroup;
 			children = (
-				189AC2391BFDA44F00BF5ACE /* Data */,
+				F44311031CBF3D890082C89F /* Utilities */,
+				F44310F41CBF3D530082C89F /* Views */,
+				189AC2391BFDA44F00BF5ACE /* Model */,
 				F43776361C15522700611600 /* PopAnimations.swift */,
 				184ECFF41BFEE087001B05B2 /* Cell */,
 				18047EC11C08C43B006D1EFA /* Controllers */,
 				F4ED70471C1659F100CBBFCF /* Test */,
 				18F8B9EF1BFD5773003865E0 /* Main.storyboard */,
+				F44311641CBF41E60082C89F /* DetectFaceViewController.swift */,
 				18F8B9F71BFD5773003865E0 /* LaunchScreen.storyboard */,
 				18F8B9EB1BFD5773003865E0 /* AppDelegate.swift */,
 				F43776251C15299000611600 /* CommentFloatView.playground */,
@@ -505,6 +533,30 @@
 				18F8B9FA1BFD5773003865E0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F44310F41CBF3D530082C89F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F443110A1CBF3DE70082C89F /* MZButtonProgressView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F44311031CBF3D890082C89F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F443110C1CBF3DF10082C89F /* FileManager.swift */,
+				F44311081CBF3DE10082C89F /* UIImage+Downloader.swift */,
+				189AC2101BFD6CEC00BF5ACE /* BaseURL.swift */,
+				189AC23E1BFDB7F200BF5ACE /* MZNotificationCenter.swift */,
+				180CE4B41C06A33A00242094 /* Calculator.swift */,
+				180CE4B81C06A35600242094 /* Constants.swift */,
+				189AC2371BFDA2A800BF5ACE /* NetWork.swift */,
+				F44311061CBF3DB60082C89F /* Player.swift */,
+				F44311041CBF3DB00082C89F /* FMNetwork.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		F4689CB41C0DAB3000465BC8 /* Products */ = {
@@ -768,6 +820,7 @@
 				18349E3A1C02C08A009E4C95 /* SpringTextView.swift in Sources */,
 				18C9D3A91BFF235C00FC714E /* Weibo.swift in Sources */,
 				189AC2471BFDC1FA00BF5ACE /* SelfTableViewController.swift in Sources */,
+				F44311021CBF3D780082C89F /* FMLoginViewController.swift in Sources */,
 				F47B72D61C113C7C00BBF494 /* UserListController.swift in Sources */,
 				18349E2D1C02C08A009E4C95 /* ImageLoader.swift in Sources */,
 				186224D81C0323D70030D2D6 /* MZLoadingView.swift in Sources */,
@@ -775,10 +828,13 @@
 				18DB1E991C0B0E1300F0D122 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				18349E2B1C02C08A009E4C95 /* DesignableTextView.swift in Sources */,
 				F4ED70571C165D3000CBBFCF /* SingleImageView.swift in Sources */,
+				F44311091CBF3DE10082C89F /* UIImage+Downloader.swift in Sources */,
 				18349E2C1C02C08A009E4C95 /* DesignableView.swift in Sources */,
 				18D5B9AB1C037BBE006AD9DC /* UIColorExtension.swift in Sources */,
+				F44311101CBF3DFB0082C89F /* DBChannel.swift in Sources */,
 				189AC2131BFD6E7800BF5ACE /* OauthViewController.swift in Sources */,
 				187F2BC81C07632200BD96B4 /* TabBarController.swift in Sources */,
+				F443110D1CBF3DF10082C89F /* FileManager.swift in Sources */,
 				F40749311C17327700DE7E6E /* MZToastView.swift in Sources */,
 				189AC2381BFDA2A800BF5ACE /* NetWork.swift in Sources */,
 				18DB1E971C0B0E1300F0D122 /* TPKeyboardAvoidingScrollView.m in Sources */,
@@ -789,13 +845,14 @@
 				189AC23B1BFDA48300BF5ACE /* SaveData.swift in Sources */,
 				18349E251C02C08A009E4C95 /* BlurView.swift in Sources */,
 				180CE4BB1C06A42300242094 /* StatusCell.swift in Sources */,
+				F4DBB9241CBFE78600474ECC /* SWXMLHash.swift in Sources */,
 				18349E341C02C08A009E4C95 /* Spring.swift in Sources */,
 				189AC2431BFDC16800BF5ACE /* NotificationTableViewController.swift in Sources */,
 				18349E3E1C02C08A009E4C95 /* UnwindSegue.swift in Sources */,
 				18349E331C02C08A009E4C95 /* SoundPlayer.swift in Sources */,
 				189AC2151BFD728C00BF5ACE /* AuthenticationSetter.swift in Sources */,
-				189AC2451BFDC18B00BF5ACE /* SearchViewController.swift in Sources */,
 				186224D01C02EACA0030D2D6 /* SettingTableViewController.swift in Sources */,
+				F44311071CBF3DB60082C89F /* Player.swift in Sources */,
 				18349E321C02C08A009E4C95 /* Misc.swift in Sources */,
 				189AC2361BFD9B2700BF5ACE /* SwiftyJSON.swift in Sources */,
 				F4ED70551C165A1D00CBBFCF /* DetailImageViewController.swift in Sources */,
@@ -805,23 +862,30 @@
 				18349E231C02C08A009E4C95 /* AsyncImageView.swift in Sources */,
 				18DB1E961C0B0E1300F0D122 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				189AC2411BFDC14300BF5ACE /* TopWeiboTableViewController.swift in Sources */,
+				F44311051CBF3DB00082C89F /* FMNetwork.swift in Sources */,
 				180CE4B91C06A35600242094 /* Constants.swift in Sources */,
 				F43776351C1535A300611600 /* CommentFloatingViewController.swift in Sources */,
 				18349E2F1C02C08A009E4C95 /* KeyboardLayoutConstraint.swift in Sources */,
+				F4DBB9331CBFE7BB00474ECC /* MZWeatherModel.swift in Sources */,
 				18349E3C1C02C08A009E4C95 /* TransitionManager.swift in Sources */,
 				18349E271C02C08A009E4C95 /* DesignableImageView.swift in Sources */,
 				187F2BCA1C076FBD00BD96B4 /* NewStatusMenuViewController.swift in Sources */,
 				18349E291C02C08A009E4C95 /* DesignableTabBarController.swift in Sources */,
 				F47A1AA31C15A80700DD6352 /* CommentUserCell.swift in Sources */,
+				F44311111CBF3DFB0082C89F /* DBSongList.swift in Sources */,
 				189AC23F1BFDB7F200BF5ACE /* MZNotificationCenter.swift in Sources */,
 				180CE4B51C06A33A00242094 /* Calculator.swift in Sources */,
 				F47A1AB11C15A9EE00DD6352 /* DetailStatusController.swift in Sources */,
 				18047EB61C089716006D1EFA /* EditorViewController.swift in Sources */,
+				F443110B1CBF3DE70082C89F /* MZButtonProgressView.swift in Sources */,
+				F4DBB9341CBFE7BB00474ECC /* MZWeatherView.swift in Sources */,
 				18047EBE1C08AF61006D1EFA /* Data.swift in Sources */,
 				18349E3B1C02C08A009E4C95 /* SpringView.swift in Sources */,
 				18349E281C02C08A009E4C95 /* DesignableLabel.swift in Sources */,
+				F44311651CBF41E60082C89F /* DetectFaceViewController.swift in Sources */,
 				18F8B9EC1BFD5773003865E0 /* AppDelegate.swift in Sources */,
 				F40749231C17209F00DE7E6E /* GravityScroller.swift in Sources */,
+				F42C4C481CB8AF6900E555A0 /* DBFMViewController.swift in Sources */,
 				18349E361C02C08A009E4C95 /* SpringButton.swift in Sources */,
 				18349E351C02C08A009E4C95 /* SpringAnimation.swift in Sources */,
 				187F2BC61C06DF3100BD96B4 /* PreviewPictureController.swift in Sources */,
@@ -971,7 +1035,11 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MWeco/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceppLocalDetector/FaceppLocalDetectorSDK",
+					"$(PROJECT_DIR)/APIStoreSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monzy.Zhang.MWeco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -989,7 +1057,11 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MWeco/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceppLocalDetector/FaceppLocalDetectorSDK",
+					"$(PROJECT_DIR)/APIStoreSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monzy.Zhang.MWeco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

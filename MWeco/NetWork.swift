@@ -58,16 +58,6 @@ class NetWork {
         guard let access_Token = SaveData.get(withKey: .ACCESS_TOKEN) else {
             return
         }
-        
-        /*
-        {
-        "uid": 1073880650,
-        "appkey": 1352222456,
-        "scope": null,
-        "create_at": 1352267591,
-        "expire_in": 157679471
-        }
-        */
         Alamofire.request(.POST, BaseURL.kGetOauthInfo, parameters: ["access_token": access_Token]).responseJSON {
             response in
             let json = JSON(response.result.value ?? [])

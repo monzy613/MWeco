@@ -9,14 +9,14 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    
+    
+    @IBOutlet weak var imageView: AsyncImageView!
     var loadingView: MZLoadingView?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //loadingView = MZLoadingView(rootView: view, effect: UIBlurEffect(style: .Light))
-        let testButton = UIButton(type: .Custom)
-
+        imageView.setURL(NSURL(string: "http://www.raywenderlich.com/wp-content/uploads/2015/02/mac-glasses.jpeg"), placeholderImage: UIImage(named: ImageNames.defaultAvatar))
+        print("http://www.raywenderlich.com/wp-content/uploads/2015/02/mac-glasses.jpeg")
     }
 
     override func didReceiveMemoryWarning() {

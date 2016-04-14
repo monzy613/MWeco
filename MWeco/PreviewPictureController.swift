@@ -27,7 +27,7 @@ class PreviewPictureController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = imageURL {
-            self.imageViewToPreview.url = url
+            self.imageViewToPreview.setURL(url, placeholderImage: UIImage(named: ImageNames.defaultAvatar))
         }
     }
     

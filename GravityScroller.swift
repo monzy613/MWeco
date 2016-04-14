@@ -61,18 +61,18 @@ class GravityScroller: AnyObject {
                     originAccelerationY = accelerationY
                 }
                 accelerationY = accelerationY - originAccelerationY!
-                
-                if abs(accelerationY) < stableAmount {
-                    return
-                }
-                
-                //up to -1, down to 1, plain to 0
                 if accelerationY > 0 {
                     pre = 1
                 } else if accelerationY < 0 {
                     pre = -1
                 }
                 pre = pre * (direction.rawValue)
+                
+                if abs(accelerationY) < stableAmount {
+                    return
+                }
+                accelerationY = (abs(accelerationY) - stableAmount)
+                //up to -1, down to 1, plain to 0
                 
                 let offsetY = accelerationY * accelerationY * pre * tableView.frame.height * speed
                 

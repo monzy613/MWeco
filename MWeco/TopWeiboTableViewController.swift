@@ -10,7 +10,7 @@ import UIKit
 import CoreMotion
 
 class TopWeiboTableViewController: UITableViewController, StatusCellDelegate, UIGestureRecognizerDelegate {
-    
+    var weatherView: MZWeatherView?
     
     @IBOutlet weak var gravityDirectionButton: UIBarButtonItem!
     @IBAction func changeGravityScrollDirection(sender: UIBarButtonItem) {
@@ -45,13 +45,15 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherView = MZWeatherView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height), city: "呼和浩特", day: 0)
+        self.tabBarController!.view.addSubview(weatherView!)
         currentTabIndex = 0
         registerFor3DTouch()
         initUI()
         if publicStatuses.count == 0 {
             loadStatus()
         }
-        self.refreshControl?.addTarget(self, action: "loadStatus", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(TopWeiboTableViewController.loadStatus), forControlEvents: .ValueChanged)
     }
     
     private func initAutoScrolling() {
@@ -127,6 +129,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate, UI
                     NetWork.getFriends(ofType: .FollowMe)
                 }
             }, onFailure: {
+                self.weatherView?.dismissSelf()
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
         })
     }

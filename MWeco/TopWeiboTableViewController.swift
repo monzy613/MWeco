@@ -45,7 +45,7 @@ class TopWeiboTableViewController: UITableViewController, StatusCellDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherView = MZWeatherView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height), city: "呼和浩特", day: 0)
+        weatherView = MZWeatherView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height), day: 0)
         self.tabBarController!.view.addSubview(weatherView!)
         currentTabIndex = 0
         registerFor3DTouch()

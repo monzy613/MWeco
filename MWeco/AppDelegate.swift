@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CoreMotion
+var weatherlocationManager: MZLocationManager?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,20 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var notificationCenter: MZNotificationCenter?
     var motionManager = CMMotionManager()
     static let motionManager = CMMotionManager()
-    
-/*
-    - (CMMotionManager *)motionManager {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-    _motionManager = [[CMMotionManager alloc] init];
-    });
-    return _motionManager;
-    }
-    */
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         notificationCenter = MZNotificationCenter.getInstance()
+        weatherlocationManager = MZLocationManager()
         return true
     }
 

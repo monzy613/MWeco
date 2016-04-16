@@ -9,6 +9,85 @@
 import UIKit
 import Alamofire
 
+class MZLocationManager: NSObject, AMapLocationManagerDelegate, AMapSearchDelegate {
+    private let APIKEY = ""
+    private var locationManager: AMapLocationManager?
+    private var search: AMapSearchAPI?
+    var location: CLLocation
+    var cityName: String? {
+        didSet {
+            print("cityName didSet: \(cityName)")
+            SaveData.set(value: self.cityName ?? "上海", withKey: DataKeys.CITYNAME)
+        }
+    }
+    var cityCode: String = ""
+
+    override init() {
+        location = CLLocation()
+        super.init()
+        print("MZLocationManager")
+        if CLLocationManager.locationServicesEnabled() &&
+            (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways ||
+                CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined)
+        {
+            locationManager = AMapLocationManager()
+            locationManager?.delegate = self
+            locationManager?.startUpdatingLocation()
+            AMapSearchServices.sharedServices().apiKey = APIKEY
+            search = AMapSearchAPI()
+            search?.delegate = self
+        } else {
+            print("gps invalid")
+        }
+    }
+
+    func getCurrentCity() {
+        let regeoRequest = AMapReGeocodeSearchRequest()
+        regeoRequest.location = AMapGeoPoint.locationWithLatitude(CGFloat(location.coordinate.latitude), longitude: CGFloat(location.coordinate.longitude))
+        print("currentLocation: \(regeoRequest.location)")
+        regeoRequest.radius = 10000
+        regeoRequest.requireExtension = true
+        self.search?.AMapReGoecodeSearch(regeoRequest)
+    }
+
+    //MARK: AMapSearchDelegate Mathods
+    func onReGeocodeSearchDone(request: AMapReGeocodeSearchRequest!, response: AMapReGeocodeSearchResponse!) {
+        print("onReGeocodeSearchDone")
+        if let regeocode = response.regeocode {
+            var fullCityName = ""
+            if (regeocode.addressComponent.city == nil || regeocode.addressComponent.city == "") {
+                fullCityName = regeocode.addressComponent.province
+                print("直辖市: \(self.cityName) code: \(cityCode)")
+            } else {
+                fullCityName = regeocode.addressComponent.city
+                print("非直辖市: \(self.cityName) code: \(cityCode)")
+            }
+            fullCityName = fullCityName.substringToIndex(fullCityName.endIndex.advancedBy(-1))
+            cityName = fullCityName
+
+            locationManager?.stopUpdatingLocation()
+            if let cityCode = regeocode.addressComponent.citycode {
+                if cityCode != "" {
+                    self.cityCode = cityCode
+                } else {
+                    return
+                }
+            } else {
+                return
+            }
+        }
+    }
+
+    //MARK: AMapLocationManagerDelegate Methods
+    func amapLocationManager(manager: AMapLocationManager!, didUpdateLocation location: CLLocation!) {
+        print("GPS->: \(location.coordinate)")
+        self.location = location
+        if ((self.cityName == nil)) {
+            getCurrentCity()
+        }
+    }
+}
+
 class MZWeatherView: UIView {
     var city: String?
     var showInterval: NSTimeInterval = 3
@@ -37,15 +116,15 @@ class MZWeatherView: UIView {
         }
     }
 
-    init(frame: CGRect, city: String = "上海", day: Int = 0) {
+    init(frame: CGRect, day: Int = 0) {
         super.init(frame: frame)
         blurView = UIVisualEffectView(effect: UIBlurEffect())
         degreeLabel = UILabel()
         cityLabel = UILabel()
         dismissButton = UIButton(type: .System)
         degreeLabel?.text = "0"
+        self.city = (SaveData.get(withKey: .CITYNAME) as? String) ?? "上海"
         cityLabel?.text = city
-        self.city = city
 
         dismissButton?.setTitle("跳过", forState: .Normal)
         dismissButton?.setTitleColor(UIColor.whiteColor(), forState: .Normal)
@@ -92,7 +171,7 @@ class MZWeatherView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         print("layoutSubviews")
-        self.dismissTimer = NSTimer.scheduledTimerWithTimeInterval(showInterval, target: self, selector: #selector(removeFromSuperview), userInfo: nil, repeats: false)
+        self.dismissTimer = NSTimer.scheduledTimerWithTimeInterval(showInterval, target: self, selector: #selector(dismissSelf), userInfo: nil, repeats: false)
     }
 
     private func placeWithGB2312Coding(rawString: String) -> String {
@@ -106,6 +185,7 @@ class MZWeatherView: UIView {
 
     private func fetchWeatherInfo() {
         let url = weatherQueryURL(city ?? "上海", day: 0)
+        print("city: \(city)")
         print("url: \(url)")
         Alamofire.request(.GET, url).response {
             req, res, data, error in
@@ -119,6 +199,7 @@ class MZWeatherView: UIView {
         dismissTimer?.invalidate()
         dismissTimer = nil
         UIView.animateWithDuration(0.25, animations: {
+            self.transform = CGAffineTransformMakeScale(2.0, 2.0)
             self.alpha = 0.0
         }) { (finished) in
             self.removeFromSuperview()

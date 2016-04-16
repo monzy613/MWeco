@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (3.3.1)
+  - AMapLocation (1.2.2)
+  - AMapSearch (3.3.0)
+  - pop (1.0.9)
+
+DEPENDENCIES:
+  - Alamofire
+  - AMapLocation
+  - AMapSearch
+  - pop
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  AMapLocation: 5412fbf0385716d4d481e39a95929057cddc093f
+  AMapSearch: cff4faf59c007f7d1f2bae2d7170c3912783981a
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+
+COCOAPODS: 0.39.0

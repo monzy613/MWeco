@@ -10,6 +10,7 @@ import UIKit
 
 
 enum DataKeys: String {
+    case CITYNAME = "MWeco.MZLocationManager.cityName"
     case ACCESS_TOKEN = "ACCESS_TOKEN"
     case UID = "UID"
 }
